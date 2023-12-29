@@ -5,17 +5,19 @@ import "./Home.css";
 class Home extends Component {
   render() {
     return (
-      <div className="home-container">
+    <div className="home-container">
+      <div className="image-container">
         <img src={img} alt="Shopping" className="centered-image" />
-        <div class="center">
-          New Outwear <br /> collection
+        <div className="center">
+          New Outwear <br /> Collection
         </div>
-        <button>
-          <a href="#">
-            <span>Button</span>
-          </a>
-        </button>
       </div>
+      <button className="cta-button">
+        <a href="#">
+          <span>Button</span>
+        </a>
+      </button>
+    </div>
     );
   }
 }
