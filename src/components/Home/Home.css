@@ -180,6 +180,10 @@ background-color: black;
 
 /* Existing styles remain unchanged */
 
+/* Home.css */
+
+/* Existing styles remain unchanged */
+
 @media only screen and (max-width: 768px) {
   /* Adjustments for small screens */
 
@@ -187,31 +191,30 @@ background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Make the image touch both ends on small screens */
-    margin-top: 20px; /* Adjust top margin for smaller screens */
+    width: 100%;
+    margin-top: 20px;
   }
 
   .center {
-    font-size: 30px; /* Decrease font size for smaller screens */
-    margin-top: 10px; /* Adjust top margin for smaller screens */
+    font-size: 30px;
+    margin-top: 10px;
   }
 
   .cta-button {
-    width: 80%; /* Adjust button width for smaller screens */
-    margin-top: 10px; /* Adjust top margin for smaller screens */
+    display: none; /* Hide the button on small screens */
   }
 
   .new {
-    margin-top: 10px; /* Adjust margin for smaller screens */
+    margin-top: 10px;
   }
 
   .card-container {
-    flex-direction: column; /* Stack cards vertically on small screens */
+    flex-direction: column;
     align-items: center;
   }
 
   .card {
-    width: 80%; /* Adjust card width for smaller screens */
-    margin: 0 0 20px 0; /* Adjust margins for smaller screens */
+    width: 80%;
+    margin: 0 0 20px 0;
   }
 }
