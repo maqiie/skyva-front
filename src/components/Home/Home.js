@@ -66,7 +66,7 @@ class Home extends Component {
           </div>
         </section>
         <button className="cta-button">
-          <a href="#">
+          <a className="a1" href="#">
             <span>Shop Now</span>
           </a>
         </button>
