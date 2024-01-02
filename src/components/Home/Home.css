@@ -1,6 +1,3 @@
-*{
-/* background-color: aliceblue; */
-}
 
 .home-container {
     display: flex;
@@ -56,7 +53,7 @@
     padding: 15px 30px;
     border: 2px solid white;
     text-transform: uppercase;
-    color: grey;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
@@ -85,7 +82,10 @@ background-color: black;
     transform: scaleY(0);
   }
   .a1:hover{
-    color: #ddd;
+    /* color: #ddd; */
+    opacity: 0.6;
+    box-shadow: 0 0 0 5px #f7f9fa60;
+    color: #ffffff;
   }
   
   .a1::after {
@@ -149,4 +149,69 @@ background-color: black;
   .card p {
     margin: 0;
   }
-  
+
+/* Navbar.css */
+
+/* ... Existing styles remain unchanged ... */
+
+@media only screen and (max-width: 768px) {
+  /* Adjustments for small screens */
+
+  .centered-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Make the image touch both ends on small screens */
+    margin-top: 20px; /* Adjust top margin for smaller screens */
+  }
+
+  .center {
+    font-size: 30px; /* Decrease font size for smaller screens */
+    margin-top: 10px; /* Adjust top margin for smaller screens */
+  }
+
+  .cta-button {
+    width: 80%; /* Adjust button width for smaller screens */
+    margin-top: 10px; /* Adjust top margin for smaller screens */
+  }
+}
+
+/* Home.css */
+
+/* Existing styles remain unchanged */
+
+@media only screen and (max-width: 768px) {
+  /* Adjustments for small screens */
+
+  .centered-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Make the image touch both ends on small screens */
+    margin-top: 20px; /* Adjust top margin for smaller screens */
+  }
+
+  .center {
+    font-size: 30px; /* Decrease font size for smaller screens */
+    margin-top: 10px; /* Adjust top margin for smaller screens */
+  }
+
+  .cta-button {
+    width: 80%; /* Adjust button width for smaller screens */
+    margin-top: 10px; /* Adjust top margin for smaller screens */
+  }
+
+  .new {
+    margin-top: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    align-items: center;
+  }
+
+  .card {
+    width: 80%; /* Adjust card width for smaller screens */
+    margin: 0 0 20px 0; /* Adjust margins for smaller screens */
+  }
+}

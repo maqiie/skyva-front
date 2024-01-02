@@ -1,28 +1,59 @@
-/* styles.css */
+/* Navbar.css */
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.cart {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out; /* Add a smooth transition for the hover effect */
+}
+
+.cart:hover {
+  color: gold; /* Change the color on hover */
+}
+
+.navbar-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.navbar-right a:hover {
+  color: gold; /* Change the color on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
+
   .navbar-left {
-    display: flex;
+      margin-bottom: 1rem;
   }
-  
-  .navbar-left a {
-    margin-right: 15px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-  
+}

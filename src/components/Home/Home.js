@@ -1,36 +1,4 @@
 
-// import React, { Component } from "react";
-// import img from "../../assets/shopping.jpg"; // Adjust the path based on your project structure
-// import "./Home.css";
-
-// class Home extends Component {
-//   render() {
-//     return (
-//       <div className="home-container">
-//         <div className="image-container">
-//           <img src={img} alt="Shopping" className="centered-image" />
-//           <div className="center">
-//             New Outwear <br /> Collection
-//           </div>
-//         </div>
-//         <section className="new">
-//           <h2>Newest Products</h2>
-
-//           <div className="card">
-            
-//           </div>
-//         </section>
-//         <button className="cta-button">
-//           <a href="#">
-//             <span>Shop Now</span>
-//           </a>
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Home;
 import React, { Component } from "react";
 import "./Home.css";
 import img from "../../assets/shopping.jpg";
