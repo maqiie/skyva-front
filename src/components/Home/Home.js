@@ -1,4 +1,3 @@
-
 // import React, { Component } from "react";
 // import "./Home.css";
 // import img from "../../assets/shopping.jpg";
@@ -33,7 +32,7 @@
 //             </div>
 //           </div>
 //         </section>
-        
+
 //         <button className="cta-button">
 //           <a className="a1" href="#">
 //             <span>Shop Now</span>
@@ -88,7 +87,7 @@ class Home extends Component {
                 className="card__background"
                 style={{
                   backgroundImage:
-                    "url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"
+                    "url(https://images.unsplash.com/photo-1580326939256-bd950d90b81a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNvc21ldGljc3xlbnwwfDB8MHx8fDA%3D)",
                 }}
               ></div>
               <div className="card__content">
@@ -101,7 +100,7 @@ class Home extends Component {
                 className="card__background"
                 style={{
                   backgroundImage:
-                    "url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
+                    "url(https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNob2VzfGVufDB8MHwwfHx8MA%3D%3D)",
                 }}
               ></div>
               <div className="card__content">
@@ -114,12 +113,12 @@ class Home extends Component {
                 className="card__background"
                 style={{
                   backgroundImage:
-                    "url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
+                    "url(https://images.unsplash.com/photo-1561526116-e2460f4d40a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhzfGVufDB8MHwwfHx8MA%3D%3D)",
                 }}
               ></div>
               <div className="card__content">
                 <p className="card__category">Category</p>
-                <h3 className="card__heading">Lingeries</h3>
+                <h3 className="card__heading">Clothes</h3>
               </div>
             </a>
             <a className="card" href="#">
@@ -127,7 +126,7 @@ class Home extends Component {
                 className="card__background"
                 style={{
                   backgroundImage:
-                    "url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
+                    "url(https://images.unsplash.com/photo-1699570048416-464809789279?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJlc3MlMjBzZXdpbmd8ZW58MHwwfDB8fHww)",
                 }}
               ></div>
               <div className="card__content">
@@ -135,6 +134,22 @@ class Home extends Component {
                 <h3 className="card__heading">Dresses</h3>
               </div>
             </a>
+          </div>
+          
+          
+        </section>
+        <section className="hero-section">
+        <div className="maps">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.621694221964!2d39.22974799535693!3d-6.776292510759074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ffd9443848f%3A0x177d30c63cc6adc6!2sC!5e0!3m2!1sen!2stz!4v1704468258544!5m2!1sen!2stz"
+              width="1500"
+              height="550"
+              // margin-bottom ="20px"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </section>
         <button className="cta-button">
