@@ -17,7 +17,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         <FontAwesomeIcon icon={faShoppingCart} className="cart" />
-        <Link to="/about">About</Link>
+        <Link to="/map">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/login">
