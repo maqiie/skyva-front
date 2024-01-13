@@ -1,221 +1,15 @@
-
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    
-  }
-  
-  .image-container {
-    position: relative;
-  }
-  
-  .centered-image {
-    max-width: 100%;
-    max-height: 100%;
-    margin-bottom: 20px;
-    width: 900px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 80px;
-  }
-  
-  .center {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
-    color: aliceblue;
-    font-weight: bold;
-    margin-top: 20px;
-
-}
-  
- 
-
-  
-  .cta-button {
-    background-color: transparent;
-    text-decoration: none;
-    border: none;
-    position: absolute;
-    top: 50%; /* Adjust the top position as needed */
-    left: 50%;
-    margin-top: 40px;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-  }
-  
-  
-  .a1 {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid white;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    border-radius: 10px;
-    margin-top: 2px;
-  }
-  .span{
-background-color: black;
-  }
-  /* <=======button home==========> */
-
-  
-  .a1::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - 12px);
-    /* background-color: #ede7e7; */
-    transition: 0.3s ease-in-out;
-    transform: scaleY(1);
-  }
-  
-  .a1:hover::before {
-    transform: scaleY(0);
-  }
-  .a1:hover{
-    /* color: #ddd; */
-    opacity: 0.6;
-    box-shadow: 0 0 0 5px #13cee660;
-    color: #06c0c0;
-  }
-  
-  .a1::after {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: -2px;
-    height: calc(100% + 4px);
-    width: calc(100% - 12px);
-    /* background-color: #ededed; */
-    transition: 0.3s ease-in-out;
-    transform: scaleX(1);
-    transition-delay: 0.5s;
-  }
-  
-  .a1:hover::after {
-    transform: scaleX(0);
-  }
-  
-  .a1 span {
-    position: relative;
-    z-index: 3;
-  }
-  
-  button {
-    background-color: none;
-    text-decoration: none;
-    background-color: #f5f5f5;
-    border: none;
-    border-radius: 50%;
-  }
-
-  /* <======new========> */
-  .new {
-    margin-top: 20px; /* Adjust the margin as needed */
-  }
-  /* <===========card==============> */
-  .card-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  
-  .card1 {
-    width: 200px;
-    text-align: center;
-    border: 1px solid #ddd; /* Border color for the cards */
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0 10px; /* Adjust the margin to add space between cards */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-  }
-  
-  .card1 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .card1 p {
-    margin: 0;
-  }
-
-
-@media only screen and (max-width: 768px) {
-  /* Adjustments for small screens */
-
-  .centered-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Make the image touch both ends on small screens */
-    margin-top: 20px; /* Adjust top margin for smaller screens */
-  }
-
-  .center {
-    font-size: 30px; /* Decrease font size for smaller screens */
-    margin-top: 10px; /* Adjust top margin for smaller screens */
-  }
-
-  .cta-button {
-    width: 80%; /* Adjust button width for smaller screens */
-    margin-top: 10px; /* Adjust top margin for smaller screens */
-  }
+/* Resetting default styles and applying a box-sizing border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-
-@media only screen and (max-width: 768px) {
-  /* Adjustments for small screens */
-
-  .centered-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .center {
-    font-size: 30px;
-    margin-top: 10px;
-  }
-
-  .cta-button {
-    display: none; /* Hide the button on small screens */
-  }
-
-  .new {
-    margin-top: 10px;
-  }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card1 {
-    width: 80%;
-    margin: 0 0 20px 0;
-  }
-}
-/* <=========category========= */
-
-:root{
+/* Variable definitions */
+:root {
   --background-dark: #2d3548;
-  --text-light: rgba(255,255,255,0.6);
-  --text-lighter: rgba(255,255,255,0.9);
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
   --spacing-s: 8px;
   --spacing-m: 16px;
   --spacing-l: 24px;
@@ -224,35 +18,94 @@ background-color: black;
   --width-container: 1200px;
 }
 
-*{
-  border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html{
-  height: 100%;
+/* Base styling for the entire page */
+body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-}
-
-body{
+  margin: 0;
   height: 100%;
 }
 
-.hero-section{
-  width: 100%;
-  align-items: flex-start;
-  background-image: linear-gradient(15deg, 06e2d7 0%, 06e2d7 150%);
+/* Container for the entire page */
+.home-container {
   display: flex;
-  min-height: 100%;
-  justify-content: center;
-  padding: var(--spacing-xxl) var(--spacing-l);
-  /* margin-top: 80px; */
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
-.card-grid{
+Header image and text styling
+.image-container {
+  position: relative;
+}
+
+.centered-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-top: 80px;
+
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: aliceblue;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Newest Products section styling */
+.new {
+  margin-top: var(--spacing-l);
+}
+
+/* Product cards styling */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: var(--spacing-l);
+}
+
+.card1 {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: var(--spacing-m);
+  margin: 0 var(--spacing-m) var(--spacing-m) 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card1 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--spacing-s);
+}
+
+.card1 p {
+  margin: 0;
+}
+
+/* Hero section with category cards styling */
+.hero-section {
+  width: 100%;
+  background-image: linear-gradient(15deg, #06e2d7 0%, #06e2d7 150%);
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-column-gap: var(--spacing-l);
@@ -261,32 +114,32 @@ body{
   width: 100%;
 }
 
-@media(min-width: 540px){
-  .card-grid{
-    grid-template-columns: repeat(2, 1fr); 
-  }
-  
-}
-
-@media(min-width: 960px){
-  .card-grid{
-    grid-template-columns: repeat(4, 1fr); 
+/* Responsive adjustments for category cards */
+@media (min-width: 540px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.card{
+@media (min-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
   list-style: none;
   position: relative;
 }
 
-.card:before{
+.card:before {
   content: '';
   display: block;
   padding-bottom: 150%;
   width: 100%;
 }
 
-.card__background{
+.card__background {
   background-size: cover;
   background-position: center;
   border-radius: var(--spacing-l);
@@ -298,42 +151,169 @@ body{
   top: 0;
   transform-origin: center;
   transform: scale(1) translateZ(0);
-  transition: 
-    filter 200ms linear,
-    transform 200ms linear;
+  transition: filter 200ms linear, transform 200ms linear;
 }
 
-.card:hover .card__background{
+.card:hover .card__background {
   transform: scale(1.05) translateZ(0);
 }
 
-.card-grid:hover > .card:not(:hover) .card__background{
+.card-grid:hover > .card:not(:hover) .card__background {
   filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
 }
 
-.card__content{
+.card__content {
   left: 0;
   padding: var(--spacing-l);
   position: absolute;
   top: 0;
 }
 
-.card__category{
+.card__category {
   color: var(--text-light);
   font-size: 0.9rem;
   margin-bottom: var(--spacing-s);
   text-transform: uppercase;
 }
 
-.card__heading{
+.card__heading {
   color: var(--text-lighter);
   font-size: 1.9rem;
-  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
   word-spacing: 100vw;
 }
 
-/* <===============maps============> */
-/* Add this CSS at the end of your existing styles */
+/* Google Maps section styling */
+.maps {
+  width: 100%;
+}
 
-  
+iframe {
+  width: 100%;
+  height: 550px;
+  border: 0;
+  margin-bottom: var(--spacing-l);
+}
+
+/* Call-to-action button styling */
+.cta-button {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: var(--spacing-l);
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.a1 {
+  position: relative;
+  display: inline-block;
+  padding: var(--spacing-m) var(--spacing-l);
+  border: 2px solid white;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2em;
+  border-radius: 10px;
+  margin-top: var(--spacing-s);
+}
+
+/* Hover effect styles */
+.a1::before,
+.a1::after {
+  content: '';
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+
+.a1::before {
+  top: var(--spacing-s);
+  left: -var(--spacing-s);
+  width: calc(100% + 2 * var(--spacing-s));
+  height: calc(100% - 2 * var(--spacing-s));
+}
+
+.a1:hover::before {
+  transform: scaleY(0);
+}
+
+.a1:hover {
+  opacity: 0.6;
+  box-shadow: 0 0 0 5px #13cee660;
+  color: #06c0c0;
+}
+
+.a1::after {
+  left: var(--spacing-s);
+  top: -var(--spacing-s);
+  height: calc(100% + 2 * var(--spacing-s));
+  width: calc(100% - 2 * var(--spacing-s));
+  transition-delay: 0.5s;
+}
+
+.a1:hover::after {
+  transform: scaleX(0);
+}
+
+/* Responsive adjustments for small screens */
+@media only screen and (max-width: 768px) {
+  .center {
+    font-size: 3em;
+    margin-top: var(--spacing-m);
+  }
+
+  .cta-button {
+    width: 80%;
+    margin-top: var(--spacing-m);
+  }
+
+  .new,
+  .card-container {
+    margin-top: var(--spacing-m);
+  }
+
+  .card1 {
+    margin: 0 0 var(--spacing-m) 0;
+  }
+}
+
+/* Additional media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  .a1 {
+    padding: var(--spacing-s) var(--spacing-m);
+    font-size: 1em;
+  }
+}
+
+
+/* Add this to your existing CSS or create a new CSS file */
+.animated {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Apply fade-in animation on scroll */
+.animated[data-aos='fade-up'][data-aos-delay='0'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional styling for hover effect */
+.animated:hover {
+  opacity: 0.8;
+  /* Add any additional styling for the hover effect */
+}
+
+/* Additional media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .animated {
+    transition: none; /* Disable animation on smaller screens if needed */
+  }
+}
+

@@ -16,8 +16,11 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-right">
-        <FontAwesomeIcon icon={faShoppingCart} className="cart" />
-        <Link to="/map">About</Link>
+      {/* <Link to="/cart"> */}
+          <FontAwesomeIcon icon={faShoppingCart} className="cart1" />
+        {/* </Link> */}
+    
+        <Link to="/aboutus">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/login">

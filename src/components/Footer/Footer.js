@@ -9,7 +9,7 @@ const Footer = () => {
         <div id="container">
           <div id="cont">
             <div class="footer_center">
-              <h3>Classy footer text</h3>
+              <h3></h3>
               <nav>
                 <ul>
                   <li>
@@ -29,7 +29,7 @@ const Footer = () => {
                   </li>
                   <section className="social">
           <button class="btn">
-            <span>Hover Me</span>
+            <span>Social</span>
             <div class="container">
               <svg
                 height="35"

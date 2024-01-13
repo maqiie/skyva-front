@@ -23,14 +23,15 @@
   font-size: 1.5rem;
 }
 
-.cart {
+.cart1 {
   font-size: 1.5rem;
   margin-left: 20px;
   cursor: pointer;
   transition: color 0.3s ease-in-out; /* Add a smooth transition for the hover effect */
+  margin:0;
 }
 
-.cart:hover {
+.cart:hover1 {
   color: gold; /* Change the color on hover */
 }
 

@@ -34,6 +34,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Navbar/Login/Login";
 import MapComponent from "./components/Maps/MapComponent";
+import AboutUs from "./components/About/About";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/map" element={<MapComponent />} /> {/* Use MapComponent here */}
+          <Route path="/map" element={<MapComponent />} /> 
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path ='/cart/:id?' element= {<Cart />} />
         </Routes>
         <Footer />
       </BrowserRouter>
