@@ -48,7 +48,8 @@ body {
 .centered-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: var(--spacing-m);
+  /* margin-bottom: var(--spacing-m); */
+  margin-top: 50px;
 }
 
 
@@ -225,13 +226,23 @@ iframe {
 .custom-button:active {
   transform: scale(0.9);
 }
-
-
+.collection-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .collection-heading {
+    font-size: 100px;
+  }
+}
 /* Media query for small screens */
 @media screen and (max-width: 600px) {
   .custom-button {
     font-size: 14px;
     padding: 8px 16px;
+  }
+  .collection-heading {
+    font-size: 20px;
   }
 }
 

@@ -22,7 +22,7 @@ class Home extends Component {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            New Outwear <br /> Collection
+            <h2 className="collection-heading">New Outwear<br/> Collection</h2>
 
             {/* Button inside the same div */}
             <div className="button-container" data-aos="fade-up" data-aos-delay="300">

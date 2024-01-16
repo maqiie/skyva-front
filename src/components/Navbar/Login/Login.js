@@ -1,34 +1,94 @@
+
+
 import React, { Component } from 'react';
 import './Login.css';
 
 class Login extends Component {
-    render() {
-        return (
-            <div className="main">
-                <input type="checkbox" id="chk" aria-hidden="true" />
+  constructor(props) {
+    super(props);
+    this.state = {
+      isSignUp: false,
+      usernameOrEmail: '',
+      password: '',
+      confirmPassword: '',
+    };
+  }
 
-                <div className="login">
-                    <form className="form">
-                        <label htmlFor="chk" aria-hidden="true">Log in</label>
-                        <input className="input" type="email" name="email" placeholder="Email" required="" />
-                        <input className="input" type="password" name="pswd" placeholder="Password" required="" />
-                        <button>Log in</button>
-                    </form>
-                </div>
+  handleSwitchClick = () => {
+    this.setState((prevState) => ({
+      isSignUp: !prevState.isSignUp,
+    }));
+  };
 
-                <div className="register">
-                    <form className="form">
-                        <label htmlFor="chk" aria-hidden="true">Register</label>
-                        <input className="input" type="text" name="txt" placeholder="Username" required="" />
-                        <input className="input" type="email" name="email" placeholder="Email" required="" />
-                        <input className="input" type="password" name="pswd" placeholder="Password" required="" />
-                        <button>Register</button>
-                    </form>
-                </div>
+  handleInputChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  render() {
+    const { isSignUp, usernameOrEmail, password, confirmPassword } = this.state;
+
+    return (
+      <div className="container">
+        <div className="card">
+          <a className="switch" onClick={this.handleSwitchClick}>
+            Switch to {isSignUp ? 'Login' : 'Sign Up'}
+          </a>
+          <div className="inputBox1">
+            <input
+              type="text"
+              required="required"
+              name="usernameOrEmail"
+              onChange={this.handleInputChange}
+            />
+            <span className="user">{isSignUp ? 'Email' : 'Username'}</span>
+          </div>
+
+          {isSignUp && (
+            <div className="inputBox">
+              <input
+                type="password"
+                required="required"
+                name="password"
+                value={password}
+                onChange={this.handleInputChange}
+              />
+              <span>Password</span>
             </div>
-        );
-    }
+          )}
+
+          {isSignUp && (
+            <div className="inputBox">
+              <input
+                type="password"
+                required="required"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={this.handleInputChange}
+              />
+              <span>Confirm Password</span>
+            </div>
+          )}
+
+          {!isSignUp && (
+            <div className="inputBox">
+              <input
+                type="password"
+                required="required"
+                name="password"
+                value={password}
+                onChange={this.handleInputChange}
+              />
+              <span>Password</span>
+            </div>
+          )}
+
+          <button className="enter">{isSignUp ? 'Sign Up' : 'Login'}</button>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Login;
-
