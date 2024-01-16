@@ -110,7 +110,7 @@
   @media (min-width: 768px) {
     /* Apply styles for screens 768 pixels and wider */
     .form {
-        width: 20%; /* Adjust as needed for larger screens */
+        width: 80%; /* Adjust as needed for larger screens */
         margin: auto; /* Center the form horizontally */
     }
 

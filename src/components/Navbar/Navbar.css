@@ -1,60 +1,69 @@
+
 /* Navbar.css */
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  background-color: #06e2d7;
-  color: white;
+  align-items: center;
+  padding: 15px;
+  background-color: #333;
+  color: #09d7c9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.navbar-left {
-  flex: 1;
+.navbar-left .brand {
+  color: #09f3df;
+  text-decoration: none;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
 .navbar-right {
   display: flex;
-  align-items: center;
-}
-
-.brand {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.cart1 {
-  font-size: 1.5rem;
-  margin-left: 20px;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out; /* Add a smooth transition for the hover effect */
-  margin:0;
-}
-
-.cart:hover1 {
-  color: gold; /* Change the color on hover */
+  gap: 20px;
 }
 
 .navbar-right a {
-  margin-left: 20px;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  font-size: 1rem;
+  font-size: 1.2em;
 }
 
-.navbar-right a:hover {
-  color: gold; /* Change the color on hover */
+/* Add styles for the active link */
+.navbar-right a.active {
+  color: #ffcc00; /* Change the color for the active link */
 }
 
+/* Add styles for the cart and user icons */
+.cart1,
+.user {
+  font-size: 1.5em;
+}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
-  .navbar-left {
-      margin-bottom: 1rem;
+  .navbar-left .brand {
+    margin-bottom: 10px;
   }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+
+  .navbar-right a {
+    font-size: 1em;
+  }
+
+  /* Add additional styles for smaller screens as needed */
 }
