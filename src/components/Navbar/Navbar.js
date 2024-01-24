@@ -11,8 +11,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/" className="brand">
-          Skyva
+        <Link to="/" className="brand" >
+          Skyva 
         </Link>
       </div>
       <div className="navbar-right">
