@@ -13,9 +13,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #cbcbcb;
 }
 
-.card {
+.card2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +27,7 @@
   border-radius: 15px;
   background: #e3e3e3;
   box-shadow: 16px 16px 32px #c8c8c8,
-        -16px -16px 32px #fefefe;
+        -16px -16px 32px #000000;
   border-radius: 8px;
 }
 

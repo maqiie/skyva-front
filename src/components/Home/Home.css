@@ -37,8 +37,8 @@ body {
   padding: var(--spacing-m);
 }
 
-/* Header image and text styling */
-.image-container {
+Header image and text styling */
+ .image-container {
   position: relative;
   width: 100%;
   margin-top: var(--spacing-xl);
@@ -48,7 +48,7 @@ body {
 .centered-image {
   max-width: 100%;
   height: auto;
-  /* margin-bottom: var(--spacing-m); */
+  margin-bottom: var(--spacing-m);
   margin-top: 50px;
 }
 
@@ -307,3 +307,4 @@ iframe {
     font-size: 1em;
   }
 }
+

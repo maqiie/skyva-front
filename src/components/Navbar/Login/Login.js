@@ -31,7 +31,7 @@ class Login extends Component {
 
     return (
       <div className="container">
-        <div className="card">
+        <div className="card2">
           <a className="switch" onClick={this.handleSwitchClick}>
             Switch to {isSignUp ? 'Login' : 'Sign Up'}
           </a>

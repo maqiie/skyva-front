@@ -1,11 +1,16 @@
 import React, { Component } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
+
 import img from "../../assets/shopping.jpg";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
 import image3 from "../../assets/image3.jpg";
+
+const swiperImages = [image1, image2, image3]; // Add more image URLs as needed
 
 class Home extends Component {
   componentDidMount() {
@@ -15,21 +20,49 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-        <div className="image-container" data-aos="fade-up" data-aos-delay="0">
+        {/* <div className="image-container" data-aos="fade-up" data-aos-delay="0">
           <img src={img} alt="Shopping" className="centered-image" />
           <div
             className="center animated"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <h2 className="collection-heading">New Outwear<br/> Collection</h2>
+            <h2 className="collection-heading">
+              New Outwear
+              <br /> Collection
+            </h2>
 
-            {/* Button inside the same div */}
-            <div className="button-container" data-aos="fade-up" data-aos-delay="300">
+     
+            <div
+              className="button-container"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <button className="custom-button">Shop Now</button>
             </div>
           </div>
+        </div> */}
+       <div className="image-container" data-aos="fade-up" data-aos-delay="0">
+      <img
+        src={img}
+        alt="Shopping"
+        className="max-w-xs rounded-md overflow-hidden centered-image"
+      />
+      <div className="center animated" data-aos="fade-up" data-aos-delay="200">
+        <h2 className="text-2xl font-bold mb-2">
+          New Outwear
+          <br /> Collection
+        </h2>
+
+        <div className="button-container" data-aos="fade-up" data-aos-delay="300">
+          <button className="bg-blue-500 text-white py-2 px-3 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
+            Shop Now
+          </button>
         </div>
+      </div>
+    </div>
+       
+
 
         <section className="new" data-aos="fade-up" data-aos-delay="400">
           <h2>Newest Products</h2>
@@ -108,6 +141,33 @@ class Home extends Component {
             </a>
           </div>
         </section>
+        <section>
+          <div class="flex flex-wrap justify-center gap-4 p-4">
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              1
+            </div>
+
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              2
+            </div>
+
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              3
+            </div>
+
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              4
+            </div>
+
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              5
+            </div>
+
+            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
+              6
+            </div>
+          </div>
+        </section>
         <section className="hero-section">
           <div className="maps" data-aos="fade-up" data-aos-delay="800">
             <iframe
@@ -121,7 +181,6 @@ class Home extends Component {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          
         </section>
       </div>
     );
