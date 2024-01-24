@@ -21,7 +21,7 @@ const Navbar = () => {
         {/* </Link> */}
     
         <Link to="/aboutus">About</Link>
-        <Link to="/services">Services</Link>
+        <Link to="/product">Services</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/login">
         <FontAwesomeIcon icon ={faUser} className="user" />

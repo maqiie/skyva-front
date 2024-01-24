@@ -20,51 +20,44 @@ class Home extends Component {
   render() {
     return (
       <div className="home-container">
-        {/* <div className="image-container" data-aos="fade-up" data-aos-delay="0">
-          <img src={img} alt="Shopping" className="centered-image" />
-          <div
-            className="center animated"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <h2 className="collection-heading">
-              New Outwear
-              <br /> Collection
-            </h2>
+        <div
+          className="relative image-container overflow-hidden rounded-md mt-12 sm:mt-16 md:mt-20"
+          data-aos="fade-up"
+          data-aos-delay="0"
+        >
+          {/* Image */}
+          <img
+            src={img}
+            alt="Shopping"
+            className="w-full h-auto mt-4 sm:mt-8 md:mt-12"
+          />
 
-     
+          {/* Text Container */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4 sm:p-6 md:p-8">
             <div
-              className="button-container"
+              className="center animated"
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="200"
             >
-              <button className="custom-button">Shop Now</button>
+              <h2 className="text-xl sm:text-3xl md:text-5xl font-bold mb-4">
+                New Outwear
+                <br /> Collection
+              </h2>
+
+              <div
+                className="button-container"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <button className=" text-white py-2 px-3 sm:px-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition duration-300 ">
+                  Shop Now
+                </button>
+              </div>
             </div>
           </div>
-        </div> */}
-       <div className="image-container" data-aos="fade-up" data-aos-delay="0">
-      <img
-        src={img}
-        alt="Shopping"
-        className="max-w-xs rounded-md overflow-hidden centered-image"
-      />
-      <div className="center animated" data-aos="fade-up" data-aos-delay="200">
-        <h2 className="text-2xl font-bold mb-2">
-          New Outwear
-          <br /> Collection
-        </h2>
-
-        <div className="button-container" data-aos="fade-up" data-aos-delay="300">
-          <button className="bg-blue-500 text-white py-2 px-3 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
-            Shop Now
-          </button>
         </div>
-      </div>
-    </div>
-       
 
-
-        <section className="new" data-aos="fade-up" data-aos-delay="400">
+        {/* <section className="new" data-aos="fade-up" data-aos-delay="400">
           <h2>Newest Products</h2>
           <div className="card-container">
             <div className="card1">
@@ -80,7 +73,70 @@ class Home extends Component {
               <p>Product 3 Description</p>
             </div>
           </div>
+        </section> */}
+        <section className="new" data-aos="fade-up" data-aos-delay="400">
+          <h2 className="text-3xl text-black font-bold mb-8 text-center">
+            Newest Products
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="card1 bg-white p-4 rounded-md shadow-md">
+              <img
+                src={image1}
+                alt="Product 1"
+                className="w-full h-40 object-cover mb-4 rounded-md"
+              />
+              <p className="text-lg font-semibold mb-2">
+                Product 1 Description
+              </p>
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
+                Buy Now
+              </button>
+            </div>
+
+            <div className="card1 bg-white p-4 rounded-md shadow-md">
+              <img
+                src={image2}
+                alt="Product 2"
+                className="w-full h-40 object-cover mb-4 rounded-md"
+              />
+              <p className="text-lg font-semibold mb-2">
+                Product 2 Description
+              </p>
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
+                Buy Now
+              </button>
+            </div>
+            <div className="card1 bg-white p-4 rounded-md shadow-md">
+              <img
+                src={image2}
+                alt="Product 2"
+                className="w-full h-40 object-cover mb-4 rounded-md"
+              />
+              <p className="text-lg font-semibold mb-2">
+                Product 2 Description
+              </p>
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
+                Buy Now
+              </button>
+            </div>
+
+            <div className="card1 bg-white p-4 rounded-md shadow-md">
+              <img
+                src={image3}
+                alt="Product 3"
+                className="w-full h-40 object-cover mb-4 rounded-md"
+              />
+              <p className="text-lg font-semibold mb-2">
+                Product 3 Description
+              </p>
+              <button className="bg-blue-500 text-white py-2 px-4 rounded-full font-semibold text-sm transition duration-300 hover:bg-blue-600">
+                Buy Now
+              </button>
+            </div>
+          </div>
         </section>
+
         <section
           className="hero-section"
           data-aos="fade-up"
@@ -141,33 +197,38 @@ class Home extends Component {
             </a>
           </div>
         </section>
-        <section>
-          <div class="flex flex-wrap justify-center gap-4 p-4">
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              1
+        <section className="py-8">
+          <h3 className="text-3xl font-bold text-black text-center mb-6">
+            Special Offers
+          </h3>
+
+          <div className="flex flex-wrap justify-center gap-4 p-4">
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">1</span>
             </div>
 
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              2
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">2</span>
             </div>
 
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              3
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">3</span>
             </div>
 
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              4
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">4</span>
             </div>
 
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              5
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">5</span>
             </div>
 
-            <div class="flex justify-center items-center border h-32 w-48 bg-blue-100">
-              6
+            <div className="flex justify-center items-center border h-32 w-48 bg-blue-100 rounded-md shadow-md">
+              <span className="text-lg font-semibold">6</span>
             </div>
           </div>
         </section>
+
         <section className="hero-section">
           <div className="maps" data-aos="fade-up" data-aos-delay="800">
             <iframe

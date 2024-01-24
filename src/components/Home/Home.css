@@ -54,7 +54,7 @@ Header image and text styling */
 
 
 
-.center {
+/* .center {
   position: absolute;
   text-shadow: 2px 2px 4px #0ae8bf;
   top: 30%;
@@ -65,7 +65,7 @@ Header image and text styling */
   font-weight: bold;
   margin-top: var(--spacing-s);
   text-align: center;
-}
+} */
 
 /* Newest Products section styling */
 .new {
@@ -200,7 +200,7 @@ iframe {
 
 /* ... (your existing CSS) */
 
-.custom-button {
+.button-container {
   position: relative;
   display: inline-block;
   margin: 15px;
@@ -218,12 +218,12 @@ iframe {
   box-shadow: inset 0 0 0 0 #725AC1;
 }
 
-.custom-button:hover {
+.button-container:hover {
   color: white;
   box-shadow: inset 0 -100px 0 0 #09f0e4;
 }
 
-.custom-button:active {
+.button-container:active {
   transform: scale(0.9);
 }
 .collection-heading {
@@ -237,7 +237,7 @@ iframe {
 }
 /* Media query for small screens */
 @media screen and (max-width: 600px) {
-  .custom-button {
+  .button-container {
     font-size: 14px;
     padding: 8px 16px;
   }
