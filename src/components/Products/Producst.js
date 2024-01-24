@@ -5,8 +5,7 @@ class Producst extends Component {
   render() {
     return (
       <div>
-      <div className="2xl:container 2xl:mx-auto mt-20">
-
+        <div className="2xl:container 2xl:mx-auto mt-20">
           <div className="lg:px-6 md:px-4 px-2 md:py-12 py-8">
             <div>
               <h1 className="text-2xl lg:text-4xl font-semibold text-gray-800 dark:text-white text-center dark:text-gray-50">
@@ -30,27 +29,7 @@ class Producst extends Component {
                   />
                 </div>
                 <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
-                  <button
-                    aria-label="show in red color"
-                    class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
-                  >
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="5"
-                        cy="5"
-                        r="4.75"
-                        fill="#DC2626"
-                        stroke="#6B7280"
-                        stroke-width="0.5"
-                      />
-                    </svg>
-                  </button>
+                  
                   <button
                     aria-label="show in white color"
                     class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
@@ -343,153 +322,375 @@ class Producst extends Component {
         {/* section for cards */}
 
         <section className="py-8 sm:py-12 bg-white">
-  <div className="container mx-auto">
-    <h2 className="text-4xl font-bold text-center text-black mb-8">
-      Featured Products
-    </h2>
+          <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
+            <div class="mx-auto max-w-screen-xl px-4 w-full">
+              <h2 class="mb-4 font-bold text-xl text-gray-900">Trending</h2>
+              <div class="grid w-full sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://cdn.pixabay.com/photo/2023/10/16/05/01/dress-8318436_640.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-
-      {/* Card 1 */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <img
-          src="your_image_url_1"
-          alt="Product 1"
-          className="w-full h-40 object-cover mb-4 rounded-md"
-        />
-        <h3 className="text-xl font-semibold mb-2">Product 1</h3>
-        <p className="text-gray-600 mb-4">Product 1 Description</p>
-
-        {/* Add to Cart Button */}
-        <button className="CartBtn mt-4">
-          <span className="IconContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              fill="rgb(17, 17, 17)"
-              className="cart"
-            >
-              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-            </svg>
-          </span>
-          <p className="text">Add to Cart</p>
-        </button>
-      </div>
-
-      {/* Repeat similar structure for other cards */}
-      {/* Card 2 */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <img
-          src="https://pixabay.com/photos/fashion-high-heels-shoes-pumps-1284496/"
-          alt="Product 2"
-          className="w-full h-40 object-cover mb-4 rounded-md"
-        />
-        <h3 className="text-xl font-semibold mb-2">Product 2</h3>
-        <p className="text-gray-600 mb-4">Product 2 Description</p>
-
-        {/* Add to Cart Button */}
-        <button className="CartBtn mt-4">
-          <span className="IconContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              fill="rgb(17, 17, 17)"
-              className="cart"
-            >
-              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-            </svg>
-          </span>
-          <p className="text">Add to Cart</p>
-        </button>
-      </div>
-
-      {/* Card 3 */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <img
-          src="https://pixabay.com/photos/lipstick-lipgloss-lip-gloss-lips-791761/"
-          alt="Product 3"
-          className="w-full h-40 object-cover mb-4 rounded-md"
-        />
-        <h3 className="text-xl font-semibold mb-2">Product 3</h3>
-        <p className="text-gray-600 mb-4">Product 3 Description</p>
-
-        {/* Add to Cart Button */}
-        <button className="CartBtn mt-4">
-          <span className="IconContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              fill="rgb(17, 17, 17)"
-              className="cart"
-            >
-              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-            </svg>
-          </span>
-          <p className="text">Add to Cart</p>
-        </button>
-      </div>
-
-      {/* Card 4 */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <img
-          src="https://pixabay.com/photos/girls-women-people-skirts-shoes-2616812/"
-          alt="Product 4"
-          className="w-full h-40 object-cover mb-4 rounded-md"
-        />
-        <h3 className="text-xl font-semibold mb-2">Product 4</h3>
-        <p className="text-gray-600 mb-4">Product 4 Description</p>
-
-        {/* Add to Cart Button */}
-        <button className="CartBtn mt-4">
-          <span className="IconContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              fill="rgb(17, 17, 17)"
-              className="cart"
-            >
-              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-            </svg>
-          </span>
-          <p className="text">Add to Cart</p>
-        </button>
-      </div>
-
-      {/* Card 5 */}
-      <div className="bg-white p-6 rounded-md shadow-md">
-        <img
-          src="https://pixabay.com/photos/dress-fashion-girl-women-model-8318436/"
-          alt="Product 5"
-          className="w-full h-40 object-cover mb-4 rounded-md"
-        />
-        <h3 className="text-xl font-semibold mb-2">Product 5</h3>
-        <p className="text-gray-600 mb-4">Product 5 Description</p>
-
-        {/* Add to Cart Button */}
-        <button className="CartBtn mt-4">
-          <span className="IconContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="1em"
-              viewBox="0 0 576 512"
-              fill="rgb(17, 17, 17)"
-              className="cart"
-            >
-              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
-            </svg>
-          </span>
-          <p className="text">Add to Cart</p>
-        </button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://images.unsplash.com/photo-1589565944201-d5ee383f28fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJlc3NzfGVufDB8MHwwfHx8MA%3D%3D" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
+                  <a
+                    href=""
+                    class="hover:text-orange-600 absolute z-30 top-2 right-0 mt-2 mr-3"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </a>
+                  
+                  <div class="h-auto overflow-hidden">
+                    <div class="h-44 overflow-hidden relative">
+                      <img src="https://picsum.photos/400/400" alt="" />
+                    </div>
+                  </div>
+                  <div class="bg-white py-4 px-3">
+                    <div class="flex justify-between items-center">
+                      <button class="CartBtn">
+                        <span class="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            class="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
+                          </svg>
+                        </span>
+                        <p class="text">Add to Cart</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

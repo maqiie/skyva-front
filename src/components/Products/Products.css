@@ -61,3 +61,26 @@
     transform: scale(0.95);
     transition-duration: .5s;
   }
+
+
+
+  /* Add your styles here if needed */
+.card {
+  /* Card styles go here */
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+}
+
+.CartBtn {
+  /* Button styles go here */
+  /* background-color: #007bff; */
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.CartBtn:hover {
+  /* background-color: #0056b3; */
+}
