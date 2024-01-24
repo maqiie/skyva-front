@@ -29,7 +29,6 @@ class Producst extends Component {
                   />
                 </div>
                 <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
-                  
                   <button
                     aria-label="show in white color"
                     class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
@@ -346,10 +345,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://cdn.pixabay.com/photo/2023/10/16/05/01/dress-8318436_640.jpg" alt="" />
+                      <img
+                        src="https://cdn.pixabay.com/photo/2023/10/16/05/01/dress-8318436_640.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -392,10 +394,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://images.unsplash.com/photo-1589565944201-d5ee383f28fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJlc3NzfGVufDB8MHwwfHx8MA%3D%3D" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1589565944201-d5ee383f28fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHJlc3NzfGVufDB8MHwwfHx8MA%3D%3D"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -437,10 +442,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlwc3RpY2t8ZW58MHwwfDB8fHww"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -482,10 +490,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1454793781512-0fafb38dce83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvb2RpZXN8ZW58MHx8MHx8fDA%3D"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -527,10 +538,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGVlbHN8ZW58MHx8MHx8fDA%3D"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -572,10 +586,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1664478180158-6bcc5527661f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdvbWVuJTIwdG9wc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -617,10 +634,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29zbWV0aWNzfGVufDB8fDB8fHww"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
@@ -662,10 +682,13 @@ class Producst extends Component {
                       />
                     </svg>
                   </a>
-                  
+
                   <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                      <img src="https://picsum.photos/400/400" alt="" />
+                      <img
+                        src="https://images.unsplash.com/photo-1684255869384-4d3a23e58569?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fGplYW5zJTIwbXVtbXl8ZW58MHx8MHx8fDA%3D"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="bg-white py-4 px-3">
