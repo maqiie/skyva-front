@@ -34,19 +34,27 @@ class Login extends Component {
   loginRequest = async () => {
     try {
       const { usernameOrEmail, password } = this.state;
-      const response = await axios.post("http://localhost:3001/auth/signin", {
-        usernameOrEmail,
-        password,
-      });
-
+      const response = await axios.post(
+        "http://localhost:3001/auth/sign_in",
+        {
+          email: usernameOrEmail,  // Update the key to "email"
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
       // Update state with the server response
       this.setState({
         dataFromServer: response.data,
       });
-
+  
       // Show success notification
       toast.success("Login successful!");
-
+  
       console.log("Data from server:", response.data);
     } catch (error) {
       console.error("Error with login request:", error);
@@ -54,6 +62,7 @@ class Login extends Component {
       toast.error("Login failed. Please check your credentials.");
     }
   };
+  
 
   // Make a registration request
   registerRequest = async () => {
@@ -153,4 +162,3 @@ class Login extends Component {
 }
 
 export default Login;
-
