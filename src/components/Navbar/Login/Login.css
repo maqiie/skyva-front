@@ -164,7 +164,7 @@
 
   .inputBox1,
   .inputBox {
-    width: 100%;
+    width: 80%;
   }
 
   /* Adjust other styles for small screens */
@@ -176,6 +176,11 @@
     min-height: 250px;
     gap: 10px;
   }
+  .inputBox1,
+  .inputBox {
+    width: 90%;
+  }
 
-  /* Adjust other styles for extra small screens */
 }
+
+
