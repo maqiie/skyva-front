@@ -30,7 +30,7 @@ class Login extends Component {
     const { isSignUp, usernameOrEmail, password, confirmPassword } = this.state;
 
     return (
-      <div className="container">
+      <div className="container1">
         <div className="card2">
           <a className="switch" onClick={this.handleSwitchClick}>
             Switch to {isSignUp ? 'Login' : 'Sign Up'}
