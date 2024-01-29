@@ -166,7 +166,10 @@
   .inputBox {
     width: 80%;
   }
-
+  .enter {
+    font-size: 8px;
+    margin-bottom: 2em;
+  }
   /* Adjust other styles for small screens */
 }
 
@@ -179,8 +182,14 @@
   .inputBox1,
   .inputBox {
     width: 90%;
+    border-radius: 5px;
   }
+  
+  .enter {
+    font-size: 7px;
+    margin-bottom: 1em;
 
+  }
 }
 
 
