@@ -9,6 +9,7 @@ import MapComponent from "./components/Maps/MapComponent";
 import AboutUs from "./components/About/About";
 import Cart from "./components/Cart/Cart";
 import Producst from "./components/Products/Producst";
+import Admin from "./components/Admin/Admin";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path ='/cart/:id?' element= {<Cart />} />
           <Route path='/product' element={<Producst />}/>
+          <Route path="/admin" element={<Admin/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
