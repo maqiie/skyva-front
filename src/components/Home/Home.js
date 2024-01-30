@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
