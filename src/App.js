@@ -10,7 +10,8 @@ import AboutUs from "./components/About/About";
 import Cart from "./components/Cart/Cart";
 import Producst from "./components/Products/Producst";
 import Admin from "./components/Admin/Admin";
-
+import Contact from "./components/About/Contact";
+import ChatComponent from "./components/Chat/ChatComponent";
 function App() {
   return (
     <div>
@@ -24,6 +25,8 @@ function App() {
           <Route path ='/cart/:id?' element= {<Cart />} />
           <Route path='/product' element={<Producst />}/>
           <Route path="/admin" element={<Admin/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/chat" element={<ChatComponent />} />
         </Routes>
         <Footer />
       </BrowserRouter>

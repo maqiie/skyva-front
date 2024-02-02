@@ -22,8 +22,7 @@ const Navbar = () => {
     
         <Link to="/aboutus">About</Link>
         <Link to="/product">Services</Link>
-        <Link to="/admin
-        ">Contact</Link>
+        <Link to="/contact">Contact</Link>
         <Link to="/login">
         <FontAwesomeIcon icon ={faUser} className="user" />
         </Link>
