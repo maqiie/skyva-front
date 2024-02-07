@@ -148,14 +148,12 @@
   }
 }
 
-/* Media queries for small screens */
+/* Small screen adjustments */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  .card {
-    width: 100%; /* Fill the entire screen */
+  .card2 {
+    min-height: 250px;
+    width: 80%;
+    gap: 15px;
   }
 
   .switch {
@@ -166,30 +164,79 @@
   .inputBox {
     width: 80%;
   }
+
   .enter {
-    font-size: 8px;
-    margin-bottom: 2em;
+    font-size: 10px;
+    height: 45px;
+    width: 100px;
   }
-  /* Adjust other styles for small screens */
+
+  .user {
+    font-size: 12px;
+  }
+
+  .inputBox1 span,
+  .inputBox span {
+    font-size: 12px;
+  }
+}
+/* swithe ========text */
+ 
+.login-text {
+  color: blue;
+  text-align: center;
+  
+   /* Change this to the desired color for "Login" */
 }
 
-/* Media queries for extra small screens */
+.signup-text {
+  color: green; /* Change this to the desired color for "Sign Up" */
+}
+
+
+/* Extra small screen adjustments */
 @media (max-width: 480px) {
-  .card {
-    min-height: 250px;
+  .card2 {
+    min-height: 200px;
+    width: 90%;
     gap: 10px;
   }
-  .inputBox1,
-  .inputBox {
-    width: 90%;
-    border-radius: 5px;
-  }
-  
-  .enter {
-    font-size: 7px;
-    margin-bottom: 1em;
 
+  .enter {
+    font-size: 8px;
+    height: 40px;
+    width: 90px;
+  }
+
+  .user {
+    font-size: 10px;
+  }
+
+  .inputBox1 span,
+  .inputBox span {
+    font-size: 10px;
   }
 }
 
+/* Very small screen adjustments */
+@media (max-width: 320px) {
+  .card2 {
+    min-height: 180px;
+    width: 95%;
+  }
 
+  .enter {
+    font-size: 7px;
+    height: 35px;
+    width: 80px;
+  }
+
+  .user {
+    font-size: 8px;
+  }
+
+  .inputBox1 span,
+  .inputBox span {
+    font-size: 8px;
+  }
+}
