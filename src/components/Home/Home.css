@@ -67,7 +67,7 @@ Header image and text styling
   height: 100%;
   object-fit: cover; /* Ensure the image covers the entire slider */
   transition: transform 0.5s ease; /* Add a transition effect */
-  border-radius: 25% 10%;
+  border-radius: 40px;
 }
 
 .slick-prev,
@@ -260,6 +260,9 @@ iframe {
   }
   .collection-heading {
     font-size: 20px;
+  }
+  .background-image{
+    border-radius: 10% / 50%;
   }
 }
 
