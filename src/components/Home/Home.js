@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper/core";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
 import { Link } from "react-router-dom"; // Import Link from your routing library
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import img from "../../assets/shopping.jpg";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
@@ -17,8 +17,19 @@ class Home extends Component {
   componentDidMount() {
     AOS.init();
   }
-
   render() {
+    const sliderSettings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      pauseOnHover: true, // Pause autoplay on hover
+      cssEase: "linear", // Set the CSS easing function
+      lazyLoad: "ondemand", // Lazy load images
+    };
     return (
       <div className="home-container">
         <div
@@ -57,7 +68,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-
+        
         <section className="new" data-aos="fade-up" data-aos-delay="400">
           <h2 className="text-3xl text-black font-bold mb-8 text-center">
             Newest Products
@@ -225,6 +236,21 @@ class Home extends Component {
             </a>
           </div>
         </section>
+
+
+        <div className="background-slider">
+          <Slider {...sliderSettings}>
+            {swiperImages.map((image, index) => (
+              <div key={index}>
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  className="background-image"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
         <section className="py-8">
           <h3 className="text-3xl font-bold text-black text-center mb-6">
             Special Offers

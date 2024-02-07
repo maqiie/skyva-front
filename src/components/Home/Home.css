@@ -54,18 +54,35 @@ Header image and text styling
 
 
 
-/* .center {
-  position: absolute;
-  text-shadow: 2px 2px 4px #0ae8bf;
-  top: 30%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  font-size: 10em;
-  color: #ffffff;
-  font-weight: bold;
-  margin-top: var(--spacing-s);
-  text-align: center;
-} */
+.background-slider {
+  margin-top: 25px;
+  position: relative;
+  width: 100%;
+  height: 100%; /* Ensure the slider takes up the full height */
+  
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire slider */
+  transition: transform 0.5s ease; /* Add a transition effect */
+  border-radius: 25% 10%;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1; /* Ensure the navigation arrows appear above the images */
+}
+
+.slick-prev {
+  left: 10px; /* Adjust the position of the previous arrow */
+}
+
+.slick-next {
+  right: 10px; /* Adjust the position of the next arrow */
+}
+
 
 /* Newest Products section styling */
 .new {
@@ -219,7 +236,7 @@ iframe {
 }
 
 .button-container:hover {
-  color: white;
+  color: rgb(255, 255, 255);
   box-shadow: inset 0 -100px 0 0 #09f0e4;
 }
 
