@@ -401,34 +401,45 @@ class Login extends Component {
   loginRequest = async () => {
     try {
       const { usernameOrEmail, password } = this.state;
-      const response = await axios.post(
-        "http://localhost:3001/auth/sign_in",
-        {
-          email: usernameOrEmail,  // Update the key to "email"
+      const response = await axios({
+        method: "post",
+        url: "http://localhost:3001/auth/sign_in",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: {
+          email: usernameOrEmail,
           password,
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-  
-      // Update state with the server response
-      this.setState({
-        dataFromServer: response.data,
       });
   
-      // Show success notification
-      toast.success("Login successful!");
-  
-      console.log("Data from server:", response.data);
+      if (response.status === 200) {
+        const authTokenHeader = response.headers["authorization"];
+        if (authTokenHeader) {
+          const authToken = authTokenHeader.split("Bearer ")[1];
+          if (authToken) {
+            localStorage.setItem("authToken", authToken);
+            console.log("Stored authToken:", authToken);
+            // Optionally, you can perform additional actions after successful login
+            // For example, you can navigate to another page
+            this.props.history.push("/");
+          } else {
+            toast.error("Invalid Authorization header format.");
+          }
+        } else {
+          toast.error("Authorization header not found in response.");
+        }
+      } else {
+        toast.error("Login failed. Check your credentials.");
+        console.error("Login failed. Response:", response);
+      }
     } catch (error) {
       console.error("Error with login request:", error);
       // Show error notification
       toast.error("Login failed. Please check your credentials.");
     }
   };
+  
   
   
   // Make a registration request

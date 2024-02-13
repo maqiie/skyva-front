@@ -9,18 +9,40 @@ class Cart extends Component {
     };
   }
 
-  componentDidMount() {
-    // Replace the URL below with your actual backend endpoint
-    const backendEndpoint = "http://localhost:3001/carts/:id/get_cart";
+  // componentDidMount() {
+  //   // Replace the URL below with your actual backend endpoint
+  //   const backendEndpoint = "http://localhost:3001/carts/:id/get_cart";
 
-    axios.get(backendEndpoint)
-      .then((response) => {
-        this.setState({ cartItems: response.data });
-      })
-      .catch((error) => {
-        console.error("Error fetching cart data:", error);
-      });
+  //   axios.get(backendEndpoint)
+  //     .then((response) => {
+  //       this.setState({ cartItems: response.data });
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching cart data:", error);
+  //     });
+  // }
+  componentDidMount() {
+    // Check if currentUser is available in the state
+    if (this.state.currentUser) {
+      console.log("Current user:", this.state.currentUser);
+      
+      const userId = this.state.currentUser.id;
+    
+      // Replace the URL below with your actual backend endpoint
+      const backendEndpoint = `http://localhost:3001/carts/${userId}/get_cart`;
+    
+      axios.get(backendEndpoint)
+        .then((response) => {
+          this.setState({ cartItems: response.data });
+        })
+        .catch((error) => {
+          console.error("Error fetching cart data:", error);
+        });
+    } else {
+      console.error("No currentUser found in state.");
+    }
   }
+  
 
   handleQuantityChange = (itemId, newQuantity) => {
     this.setState((prevState) => ({
