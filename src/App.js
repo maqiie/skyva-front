@@ -45,7 +45,7 @@ import MapComponent from "./components/Maps/MapComponent";
 import AboutUs from "./components/About/About";
 import Cart from "./components/Cart/Cart";
 import Producst from "./components/Products/Products";
-// import Admin from "./components/Admin/Admin";
+import Admin from "./components/Admin/Admin";
 import Contact from "./components/About/Contact";
 import ChatComponent from "./components/Chat/ChatComponent";
 import { useEffect, useState } from "react";
@@ -114,6 +114,7 @@ function App() {
           <Route path="/product" element={<Producst />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/chat" element={<ChatComponent />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
         <Footer />
       </BrowserRouter>

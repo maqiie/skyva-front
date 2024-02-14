@@ -193,7 +193,7 @@ const Navbar = ({ cartItemCount, currentUser, handleLogout }) => {
             )}
           </div>
         </Link>
-        <Link to="/about">About</Link>
+        <Link to="/admin">About</Link>
         <Link to="/product">Services</Link>
         <Link to="/contact">Contact</Link>
         {isLoggedIn ? (
