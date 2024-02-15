@@ -10,6 +10,7 @@ import img from "../../assets/shopping.jpg";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
 import image3 from "../../assets/image3.jpg";
+import { Axios } from "axios";
 
 const swiperImages = [image1, image2, image3]; // Add more image URLs as needed
 
@@ -17,6 +18,8 @@ class Home extends Component {
   componentDidMount() {
     AOS.init();
   }
+
+  
   render() {
     const sliderSettings = {
       dots: true,
