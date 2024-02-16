@@ -446,6 +446,11 @@ const Login = () => {
       loginRequest();
     }
   };
+  // const handleRegisterSuccses = () => {
+  //   toast.success("Register success");
+  //   navigate('/');
+  // };
+    
 
   const refreshPage = () => {
     window.location.reload(false);
