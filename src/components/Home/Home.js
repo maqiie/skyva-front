@@ -88,19 +88,7 @@ const Home = () => {
     }
   };
   
-//   const addToCart = async (productId) => {
-//     console.log("Product ID:", productId); // Log the productId value
-//     try {
-//       await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
-//         product_id: productId, // Use 'product_id' instead of 'productId'
-//         quantity: 1,
-//     });
-    
-//         console.log("Item added to cart successfully");
-//     } catch (error) {
-//         console.error("Error adding item to cart:", error.response.data); // Log the error message from the server
-//     }
-// };
+
 const addToCart = async (productId) => {
   console.log("Product ID:", productId); // Log the productId value
   try {
