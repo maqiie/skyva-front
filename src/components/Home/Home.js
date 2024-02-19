@@ -11,6 +11,11 @@ import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
 import image3 from "../../assets/image3.jpg";
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify'; // Import toast and ToastContainer
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const swiperImages = [image1, image2, image3]; // Add more image URLs as needed
 
@@ -83,19 +88,34 @@ const Home = () => {
     }
   };
   
-  const addToCart = async (productId) => {
-    console.log("Product ID:", productId); // Log the productId value
-    try {
-      await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
-        product_id: productId, // Use 'product_id' instead of 'productId'
-        quantity: 1,
-    });
+//   const addToCart = async (productId) => {
+//     console.log("Product ID:", productId); // Log the productId value
+//     try {
+//       await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
+//         product_id: productId, // Use 'product_id' instead of 'productId'
+//         quantity: 1,
+//     });
     
-        console.log("Item added to cart successfully");
-    } catch (error) {
-        console.error("Error adding item to cart:", error.response.data); // Log the error message from the server
-    }
+//         console.log("Item added to cart successfully");
+//     } catch (error) {
+//         console.error("Error adding item to cart:", error.response.data); // Log the error message from the server
+//     }
+// };
+const addToCart = async (productId) => {
+  console.log("Product ID:", productId); // Log the productId value
+  try {
+      await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
+          product_id: productId,
+          quantity: 1,
+      });
+      console.log("Item added to cart successfully");
+      toast.success('Item added to cart successfully'); // Show success toast
+  } catch (error) {
+      console.error("Error adding item to cart:", error.response.data);
+      toast.error('Error adding item to cart'); // Show error toast
+  }
 };
+
 
   
   
@@ -377,7 +397,9 @@ const Home = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+      
       </section>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,214 +1,222 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Cart.css"; // Import the CSS file for cart styles
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartItems: [],
+      cart: {},
+      orderItems: [],
     };
   }
 
-  // componentDidMount() {
-  //   // Replace the URL below with your actual backend endpoint
-  //   const backendEndpoint = "http://localhost:3001/carts/:id/get_cart";
-
-  //   axios.get(backendEndpoint)
-  //     .then((response) => {
-  //       this.setState({ cartItems: response.data });
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching cart data:", error);
-  //     });
-  // }
   componentDidMount() {
-    // Check if currentUser is available in the state
-    if (this.state.currentUser) {
-      console.log("Current user:", this.state.currentUser);
-      
-      const userId = this.state.currentUser.id;
-    
-      // Replace the URL below with your actual backend endpoint
+    if (this.props.currentUser) {
+      const userId = this.props.currentUser.id;
       const backendEndpoint = `http://localhost:3001/carts/${userId}/get_cart`;
-    
-      axios.get(backendEndpoint)
+
+      axios
+        .get(backendEndpoint)
         .then((response) => {
-          this.setState({ cartItems: response.data });
+          console.log("Cart data response:", response.data);
+          const { cart, order_items } = response.data;
+          console.log("Cart:", cart);
+          console.log("Order Items:", order_items);
+          this.setState({ cart, orderItems: order_items });
         })
         .catch((error) => {
           console.error("Error fetching cart data:", error);
         });
     } else {
-      console.error("No currentUser found in state.");
+      console.error("No currentUser found in props.");
     }
   }
-  
 
   handleQuantityChange = (itemId, newQuantity) => {
     this.setState((prevState) => ({
-      cartItems: prevState.cartItems.map((item) =>
+      orderItems: prevState.orderItems.map((item) =>
         item.id === itemId ? { ...item, quantity: newQuantity } : item
       ),
     }));
   };
 
+  removeItemFromCart = (orderItemId) => {
+    console.log("Removing item with orderItemId:", orderItemId);
+    axios
+      .delete(
+        `http://localhost:3001/carts/${this.props.currentUser.id}/remove_item/${orderItemId}`
+      )
+      .then((response) => {
+        console.log("Item removal response:", response.data);
+        // Remove the item from the state after successful removal from the backend
+        this.setState((prevState) => ({
+          orderItems: prevState.orderItems.filter(
+            (item) => item.id !== orderItemId
+          ),
+        }));
+        // Show success toast
+        toast.success("Item removed from cart successfully", {
+          className: "toast-success",
+        });
+      })
+      .catch((error) => {
+        console.error("Error removing item from cart:", error);
+        // Show error toast
+        toast.error("Error removing item from cart", {
+          className: "toast-error",
+        });
+      });
+  };
+
+  clearCart = () => {
+    axios
+      .delete(
+        `http://localhost:3001/carts/${this.props.currentUser.id}/clear_cart`
+      )
+      .then((response) => {
+        // Clear the cart in the state after successful clearance from the backend
+        this.setState({ orderItems: [] });
+        // Show success toast
+        toast.success("Cart cleared successfully");
+      })
+      .catch((error) => {
+        console.error("Error clearing cart:", error);
+        // Show error toast
+        toast.error("Error clearing cart");
+      });
+  };
+
   calculateTotal = () => {
-    return this.state.cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+    return this.state.orderItems.reduce(
+      (total, item) => total + parseFloat(item.product.price) * item.quantity,
       0
     );
   };
 
+  // render() {
+  //   const { orderItems } = this.state;
+
+  //   return (
+  //     <div className="custom-cart"> {/* Apply cart class */}
+  //       <div className="p-4">
+  //         <h2>Shopping Cart</h2>
+  //         <ul>
+  //           {orderItems.map((item) => (
+  //             <li key={item.id}>
+  //               <img
+  //                 src={item.product.image}
+  //                 alt={item.product.title}
+  //                 className="cart-item-image"
+  //               />
+  //               <div className="cart-item-details">
+  //                 <p>{item.product.name}</p>
+  //                 <p>${item.product.price}</p>
+  //               </div>
+  //               <div className="quantity-controls">
+  //                 <button onClick={() => this.handleQuantityChange(item.id, item.quantity - 1)}>-</button>
+  //                 <span>{item.quantity}</span>
+  //                 <button onClick={() => this.handleQuantityChange(item.id, item.quantity + 1)}>+</button>
+  //               </div>
+  //               <button className="button-remove" onClick={() => this.removeItemFromCart(item.id)}>Remove</button>
+  //             </li>
+  //           ))}
+  //         </ul>
+  //         <div className="cart-total">
+  //           <span>Total:</span>
+  //           <span className="font-bold text-black">${this.calculateTotal().toFixed(2)}</span>
+  //         </div>
+  //         <button className="order-now-button" onClick={this.clearCart}>Checkout</button>
+  //       </div>
+  //       <ToastContainer />
+  //     </div>
+  //   );
+  // }
   render() {
+    const { orderItems } = this.state;
+
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="p-4 max-w-xl mx-auto mt-16 md:mt-4">
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 bg-gray-200">
-            <h1 className="text-lg font-bold">Shopping Cart</h1>
-            <span className="text-gray-600">
-              ({this.state.cartItems.length} items)
-            </span>
-          </div>
-          <div className="p-4">
-            {this.state.cartItems.map((item) => (
-              <div key={item.id} className="flex flex-col md:flex-row items-center mb-4">
+      <div className="custom-cart">
+        {" "}
+        {/* Apply cart class */}
+        <div className="p-4">
+          <h2>Shopping Cart</h2>
+          <ul>
+            {orderItems.map((item) => (
+              <li key={item.id}>
                 <img
-                  className="h-16 w-16 object-contain rounded-lg md:mr-4 md:mb-0 mb-4"
-                  src="https://picsum.photos/200/200"
-                  alt={item.title}
+                  src={item.product.image}
+                  alt={item.product.title}
+                  className="cart-item-image"
                 />
-                <div className="flex-1">
-                  <h2 className="text-lg text-slate-950 font-bold">
-                    {item.title}
-                  </h2>
-                  <span className="text-gray-600">${item.price.toFixed(2)}</span>
+                <div className="cart-item-details">
+                  <p>{item.product.name}</p>
+                  <p>${item.product.price}</p>
                 </div>
-                <div className="flex items-center">
-                  <input
-                    type="number"
-                    className="w-12 h-8 border border-gray-400 text-center"
-                    value={item.quantity}
-                    onChange={(e) =>
-                      this.handleQuantityChange(item.id, parseInt(e.target.value, 10))
+                <div className="quantity-controls">
+                  <button
+                    onClick={() =>
+                      this.handleQuantityChange(item.id, item.quantity - 1)
                     }
-                  />
-                  <button className="text-gray-600 hover:text-red-500">
-                    <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                      <path d="M19 13H5v-2h14v2z" />
-                    </svg>
+                  >
+                    -
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    onClick={() =>
+                      this.handleQuantityChange(item.id, item.quantity + 1)
+                    }
+                  >
+                    +
                   </button>
                 </div>
-              </div>
+                <button
+                  className="button-remove"
+                  onClick={() => this.removeItemFromCart(item.id)}
+                >
+                  Remove
+                </button>
+              </li>
             ))}
+          </ul>
+          <div className="cart-total">
+            <span>Total:</span>
+            <span className="font-bold text-black">
+              ${this.calculateTotal().toFixed(2)}
+            </span>
           </div>
-          <div className="px-4 py-3 bg-gray-200">
-            <div className="flex justify-between items-center">
-              <span className="font-bold text-lg">Total:</span>
-              <span className="font-bold text-lg">
-                ${this.calculateTotal().toFixed(2)}
-              </span>
-            </div>
-            <button className="block w-full mt-4 bg-cyan-300 text-white font-bold py-2 px-4 rounded">
-              Checkout
-            </button>
-          </div>
+          <button className="order-now-button" onClick={this.clearCart}>
+            Checkout
+          </button>
+          {/* Button to continue shopping */}
+          <br></br>
+          <Link to="/" className="cart-cta">
+            <button1>
+              <p>Continue Shopping</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button1>
+          </Link>
         </div>
+        <ToastContainer />
       </div>
-</div>
-      
     );
   }
 }
 
 export default Cart;
-
-// import React, { Component } from "react";
-
-// class Cart extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       cartItems: [
-//         { id: 1, title: "Product 1", price: 29.99, quantity: 1 },
-//         { id: 2, title: "Product 2", price: 19.99, quantity: 1 },
-//         { id: 3, title: "Product 3", price: 24.99, quantity: 1 },
-//       ],
-//     };
-//   }
-
-//   handleQuantityChange = (itemId, newQuantity) => {
-//     this.setState((prevState) => ({
-//       cartItems: prevState.cartItems.map((item) =>
-//         item.id === itemId ? { ...item, quantity: newQuantity } : item
-//       ),
-//     }));
-//   };
-
-//   calculateTotal = () => {
-//     return this.state.cartItems.reduce(
-//       (total, item) => total + item.price * item.quantity,
-//       0
-//     );
-//   };
-
-//   render() {
-//     return (
-//       <div className="p-4 max-w-xl mx-auto mt-16">
-//         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-//           <div className="flex items-center justify-between px-4 py-3 bg-gray-200">
-//             <h1 className="text-lg font-bold">Shopping Cart</h1>
-//             <span className="text-gray-600">
-//               ({this.state.cartItems.length} items)
-//             </span>
-//           </div>
-//           <div className="p-4">
-//             {this.state.cartItems.map((item) => (
-//               <div key={item.id} className="flex items-center mb-4">
-//                 <img
-//                   className="h-16 w-16 object-contain rounded-lg mr-4"
-//                   src="https://picsum.photos/200/200"
-//                   alt={item.title}
-//                 />
-//                 <div className="flex-1">
-//                   <h2 className="text-lg text-slate-950 font-bold">
-//                     {item.title}
-//                   </h2>
-//                   <span className="text-gray-600">${item.price.toFixed(2)}</span>
-//                 </div>
-//                 <div className="flex items-center">
-//                   <input
-//                     type="number"
-//                     className="w-12 h-8 border border-gray-400 text-center"
-//                     value={item.quantity}
-//                     onChange={(e) =>
-//                       this.handleQuantityChange(item.id, parseInt(e.target.value, 10))
-//                     }
-//                   />
-//                   <button className="text-gray-600 hover:text-red-500">
-//                     <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-//                       <path d="M19 13H5v-2h14v2z" />
-//                     </svg>
-//                   </button>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//           <div className="px-4 py-3 bg-gray-200">
-//             <div className="flex justify-between items-center">
-//               <span className="font-bold text-lg">Total:</span>
-//               <span className="font-bold text-lg">
-//                 ${this.calculateTotal().toFixed(2)}
-//               </span>
-//             </div>
-//             <button className="block w-full mt-4 bg-cyan-300  text-white font-bold py-2 px-4 rounded">
-//               Checkout
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Cart;
