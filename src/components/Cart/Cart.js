@@ -35,15 +35,21 @@ class Cart extends Component {
       console.error("No currentUser found in props.");
     }
   }
-
   handleQuantityChange = (itemId, newQuantity) => {
-    this.setState((prevState) => ({
-      orderItems: prevState.orderItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
-      ),
-    }));
+    // Check if the new quantity is zero
+    if (newQuantity === 0) {
+      // Remove the item from the cart
+      this.removeItemFromCart(itemId);
+    } else {
+      // Update the quantity in the state
+      this.setState((prevState) => ({
+        orderItems: prevState.orderItems.map((item) =>
+          item.id === itemId ? { ...item, quantity: newQuantity } : item
+        ),
+      }));
+    }
   };
-
+  
   removeItemFromCart = (orderItemId) => {
     console.log("Removing item with orderItemId:", orderItemId);
     axios
@@ -96,45 +102,42 @@ class Cart extends Component {
       0
     );
   };
+  
+  addQuantity = (orderItemId, quantityChange) => {
+    const userId = this.props.currentUser.id; // Assuming you have currentUser available in props
+    console.log("User ID:", userId);
+    console.log("Order Item ID:", orderItemId);
 
-  // render() {
-  //   const { orderItems } = this.state;
+    axios
+      .patch(
+        `http://localhost:3001/carts/${userId}/add_quantity/${orderItemId}`,
+        {
+          quantity: quantityChange, // Pass the quantity change as positive or negative
+        }
+      )
+      .then((response) => {
+        console.log("Response:", response.data);
+        // Update the state with the new quantity
+        const updatedOrderItems = this.state.orderItems.map((item) =>
+          item.orderItemId === orderItemId
+            ? { ...item, quantity: item.quantity + quantityChange }
+            : item
+        );
+        this.setState({ orderItems: updatedOrderItems });
+        // Show success toast
+        toast.success("Quantity updated successfully", {
+          className: "toast-success",
+        });
+      })
+      .catch((error) => {
+        console.error("Error adding quantity:", error);
+        // Show error toast
+        toast.error("Error adding quantity", {
+          className: "toast-error",
+        });
+      });
+  };
 
-  //   return (
-  //     <div className="custom-cart"> {/* Apply cart class */}
-  //       <div className="p-4">
-  //         <h2>Shopping Cart</h2>
-  //         <ul>
-  //           {orderItems.map((item) => (
-  //             <li key={item.id}>
-  //               <img
-  //                 src={item.product.image}
-  //                 alt={item.product.title}
-  //                 className="cart-item-image"
-  //               />
-  //               <div className="cart-item-details">
-  //                 <p>{item.product.name}</p>
-  //                 <p>${item.product.price}</p>
-  //               </div>
-  //               <div className="quantity-controls">
-  //                 <button onClick={() => this.handleQuantityChange(item.id, item.quantity - 1)}>-</button>
-  //                 <span>{item.quantity}</span>
-  //                 <button onClick={() => this.handleQuantityChange(item.id, item.quantity + 1)}>+</button>
-  //               </div>
-  //               <button className="button-remove" onClick={() => this.removeItemFromCart(item.id)}>Remove</button>
-  //             </li>
-  //           ))}
-  //         </ul>
-  //         <div className="cart-total">
-  //           <span>Total:</span>
-  //           <span className="font-bold text-black">${this.calculateTotal().toFixed(2)}</span>
-  //         </div>
-  //         <button className="order-now-button" onClick={this.clearCart}>Checkout</button>
-  //       </div>
-  //       <ToastContainer />
-  //     </div>
-  //   );
-  // }
   render() {
     const { orderItems } = this.state;
 
@@ -145,7 +148,7 @@ class Cart extends Component {
         <div className="p-4">
           <h2>Shopping Cart</h2>
           <ul>
-            {orderItems.map((item) => (
+            {/* {orderItems.map((item) => (
               <li key={item.id}>
                 <img
                   src={item.product.image}
@@ -156,23 +159,31 @@ class Cart extends Component {
                   <p>{item.product.name}</p>
                   <p>${item.product.price}</p>
                 </div>
+                
                 <div className="quantity-controls">
                   <button
-                    onClick={() =>
-                      this.handleQuantityChange(item.id, item.quantity - 1)
-                    }
+                    onClick={() => {
+                      const newQuantity = item.quantity - 1; 
+                      if (newQuantity >= 0) {
+                        // Ensure the quantity doesn't become negative
+                        this.handleQuantityChange(item.id, newQuantity);
+                        this.addQuantity(item.id, -1); 
+                      }
+                    }}
                   >
                     -
                   </button>
                   <span>{item.quantity}</span>
                   <button
-                    onClick={() =>
-                      this.handleQuantityChange(item.id, item.quantity + 1)
-                    }
+                    onClick={() => {
+                      this.handleQuantityChange(item.id, item.quantity + 1);
+                      this.addQuantity(item.id, 1); 
+                    }}
                   >
                     +
                   </button>
                 </div>
+
                 <button
                   className="button-remove"
                   onClick={() => this.removeItemFromCart(item.id)}
@@ -180,7 +191,52 @@ class Cart extends Component {
                   Remove
                 </button>
               </li>
-            ))}
+            ))} */}
+            {orderItems.map((item) => (
+  <li key={item.id}>
+    <img
+      src={item.product.image}
+      alt={item.product.title}
+      className="cart-item-image"
+    />
+    <div className="cart-item-details">
+      <p>{item.product.name}</p>
+      <p>${item.product.price}</p>
+      <p>Quantity: {item.quantity}</p> {/* Display the quantity of the item */}
+    </div>
+    <div className="quantity-controls">
+      <button
+        onClick={() => {
+          const newQuantity = item.quantity - 1; // Subtract 1 from the current quantity
+          if (newQuantity >= 0) {
+            // Ensure the quantity doesn't become negative
+            this.handleQuantityChange(item.id, newQuantity);
+            this.addQuantity(item.id, -1); // Call addQuantity with a negative value to subtract
+          }
+        }}
+      >
+        -
+      </button>
+      <span>{item.quantity}</span>
+      <button
+        onClick={() => {
+          this.handleQuantityChange(item.id, item.quantity + 1);
+          this.addQuantity(item.id, 1); // Use item.id instead of item.product.id
+        }}
+      >
+        +
+      </button>
+    </div>
+
+    <button
+      className="button-remove"
+      onClick={() => this.removeItemFromCart(item.id)}
+    >
+      Remove
+    </button>
+  </li>
+))}
+
           </ul>
           <div className="cart-total">
             <span>Total:</span>

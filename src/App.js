@@ -13,6 +13,7 @@ import Producst from "./components/Products/Products";
 import Admin from "./components/Admin/Admin";
 import Contact from "./components/About/Contact";
 import ChatComponent from "./components/Chat/ChatComponent";
+import Checkout from "./components/Cart/Checkout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -78,7 +79,7 @@ function App() {
           {/* <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} /> */}
           {/* <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} /> */}
           <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} />
-
+          <Route path="/checkout" element={<Checkout currentUser={currentUser}/>} />
           <Route path="/product" element={<Producst />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/chat" element={<ChatComponent />} />

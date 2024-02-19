@@ -323,3 +323,10 @@ button1 svg {
   width: 15px;
   transition-delay: 0.2s;
 }
+
+
+.cart-item-details p.quantity {
+  /* Styles for the quantity paragraph */
+  font-size: 14px;
+  color: #666; /* Adjust the color as needed */
+}
