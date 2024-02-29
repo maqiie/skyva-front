@@ -232,7 +232,7 @@ const Home = () => {
 
       {/* <======newests products========> */}
 
-      <section className="new" data-aos="fade-up" data-aos-delay="400">
+      {/* <section className="new" data-aos="fade-up" data-aos-delay="400">
         <h2 className="text-3xl text-black font-bold mb-8 text-center">
           Newest Products
         </h2>
@@ -273,26 +273,25 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* <section className="new" data-aos="fade-up" data-aos-delay="400">
+{/* <section className="new" data-aos="fade-up" data-aos-delay="400">
   <h2 className="text-3xl text-black font-bold mb-8 text-center">
     Newest Products
   </h2>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     {recentProducts.slice(0, 8).map((product, index) => (
-      <div
-        key={index}
-        className="card1 bg-white p-4 rounded-md shadow-md"
-      >
-        {product.image_url && (
-          <img
-            src={`http://localhost:3001${product.image_url}`}
-            alt={product.name}
-            className="w-full h-40 object-cover mb-4 rounded-md"
-          />
-        )}
+      <div key={index} className="card1 bg-white p-4 rounded-md shadow-md">
+        <div className="w-full h-60 overflow-hidden mb-4 rounded-md">
+          {product.image_url && (
+            <img
+              src={`http://localhost:3001${product.image_url}`}
+              alt={product.name}
+              className="object-cover w-full h-full"
+            />
+          )}
+        </div>
 
         <p className="text-lg font-semibold mb-2">{product.name}</p>
 
@@ -317,6 +316,50 @@ const Home = () => {
     ))}
   </div>
 </section> */}
+<section className="new" data-aos="fade-up" data-aos-delay="400">
+  <h2 className="text-3xl text-black font-bold mb-8 text-center">
+    Newest Products
+  </h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {recentProducts.slice(0, 8).map((product, index) => (
+      <div key={index} className="card1 bg-white p-4 rounded-md shadow-md">
+        <div className="w-full h-60 overflow-hidden mb-4 rounded-md">
+          {product.image_url && (
+            <img
+              src={`http://localhost:3001${product.image_url}`}
+              alt={product.name}
+              className="w-full h-full object-cover rounded-md"
+              style={{ aspectRatio: '16/9' }} // Adjust the aspect ratio as needed
+            />
+          )}
+        </div>
+
+        <p className="text-lg font-semibold mb-2">{product.name}</p>
+
+        <button
+          className="CartBtn mt-4"
+          onClick={() => addToCart(product.id)}
+        >
+          <span className="IconContainer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 576 512"
+              fill="rgb(17, 17, 17)"
+              className="cart"
+            >
+              <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"></path>
+            </svg>
+          </span>
+          <span className="ml-2">Add to Cart</span>
+        </button>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       {/* <=========slider images========> */}
       <div className="background-slider">
