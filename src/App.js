@@ -28,7 +28,7 @@ function App() {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/carts/:id/get_cart"
+        "http://localhost:3001/carts/${userId}/get_cart"
       );
       setCartItems(response.data);
     } catch (error) {

@@ -462,7 +462,7 @@ const Navbar = () => {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/auth/validate_token"
+        // "http://localhost:3001/auth/validate_token"
       );
       const userData = response.data.data;
       const name = userData.name;
@@ -475,7 +475,7 @@ const Navbar = () => {
   const fetchCartItemCount = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/carts/item_count"
+        // "http://localhost:3001/carts/item_count"
       );
       const itemCount = response.data.itemCount;
       setCartItemCount(itemCount);
