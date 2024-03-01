@@ -158,7 +158,7 @@ const Home = () => {
 
       {/* <============Category================= */}
 
-      <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
+      {/* <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
         <h2 className="text-3xl text-black font-bold mb-8 text-center">
           Category
         </h2>
@@ -216,7 +216,40 @@ const Home = () => {
             </div>
           </a>
         </div>
-      </section>
+      </section> */}
+      <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
+  <h2 className="text-3xl text-black font-bold mb-8 text-center">Category</h2>
+  <div className="card-grid">
+    <Link to="/cosmetics" className="card">
+      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1580326939256-bd950d90b81a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNvc21ldGljc3xlbnwwfDB8MHx8fDA%3D)" }}></div>
+      <div className="card__content">
+        <p className="card__category">Category</p>
+        <h3 className="card__heading">Cosmetics</h3>
+      </div>
+    </Link>
+    <Link to="/shoes" className="card">
+      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNob2VzfGVufDB8MHwwfHx8MA%3D%3D)" }}></div>
+      <div className="card__content">
+        <p className="card__category">Category</p>
+        <h3 className="card__heading">Shoes</h3>
+      </div>
+    </Link>
+    <Link to="/clothes" className="card">
+      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1561526116-e2460f4d40a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhzfGVufDB8MHwwfHx8MA%3D%3D)" }}></div>
+      <div className="card__content">
+        <p className="card__category">Category</p>
+        <h3 className="card__heading">Clothes</h3>
+      </div>
+    </Link>
+    <Link to="/women" className="card">
+      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1699570048416-464809789279?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJlc3MlMjBzZXdpbmd8ZW58MHwwfDB8fHww)" }}></div>
+      <div className="card__content">
+        <p className="card__category">Category</p>
+        <h3 className="card__heading">Women</h3>
+      </div>
+    </Link>
+  </div>
+</section>;
 
       {/* <======newests products========> */}
 

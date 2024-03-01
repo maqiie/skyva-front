@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Cosmetics = ({ categoryId }) => {
+const Cosmetics = () => {
   const [products, setProducts] = useState([]);
+  const categoryId = 4;
 
   useEffect(() => {
     const fetchProductsByCategory = async () => {
@@ -17,7 +18,7 @@ const Cosmetics = ({ categoryId }) => {
     };
 
     fetchProductsByCategory();
-  }, [categoryId]);
+  }, []); // No need to include categoryId in the dependency array since it's constant
 
   return (
     <div>

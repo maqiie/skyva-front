@@ -16,6 +16,11 @@ import ChatComponent from "./components/Chat/ChatComponent";
 import Checkout from "./components/Cart/Checkout";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Cosmetics from "./components/Products/Cosmetics";
+import Women from "./components/Products/Women";
+import Clothes from "./components/Products/Clothes";
+import Shoes from "./components/Products/Shoes";
+
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -84,6 +89,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/chat" element={<ChatComponent />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/cosmetics" element={<Cosmetics />} />
+          <Route path="/clothes" element={<Clothes />} />
+          <Route path="women" element={<Women />} />
+          <Route path="shoes" element={<Shoes />} />
+
+
         </Routes>
         <Footer />
       </BrowserRouter>
