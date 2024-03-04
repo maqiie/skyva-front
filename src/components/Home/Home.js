@@ -155,15 +155,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       {/* <============Category================= */}
-
-      {/* <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
+      <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
         <h2 className="text-3xl text-black font-bold mb-8 text-center">
           Category
         </h2>
         <div className="card-grid">
-          <a className="card" href="#">
+          <Link to="/cosmetics" className="card">
             <div
               className="card__background"
               style={{
@@ -175,8 +173,9 @@ const Home = () => {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Cosmetics</h3>
             </div>
-          </a>
-          <a className="card" href="#">
+          </Link>
+          
+          <Link to="/shoes" className="card">
             <div
               className="card__background"
               style={{
@@ -188,8 +187,8 @@ const Home = () => {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Shoes</h3>
             </div>
-          </a>
-          <a className="card" href="#">
+          </Link>
+          <Link to="/clothes" className="card">
             <div
               className="card__background"
               style={{
@@ -201,8 +200,8 @@ const Home = () => {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Clothes</h3>
             </div>
-          </a>
-          <a className="card" href="#">
+          </Link>
+          <Link to="/women" className="card">
             <div
               className="card__background"
               style={{
@@ -212,47 +211,12 @@ const Home = () => {
             ></div>
             <div className="card__content">
               <p className="card__category">Category</p>
-              <h3 className="card__heading">Dresses</h3>
+              <h3 className="card__heading">Women</h3>
             </div>
-          </a>
+          </Link>
         </div>
-      </section> */}
-      <section className="hero-section" data-aos="fade-up" data-aos-delay="600">
-  <h2 className="text-3xl text-black font-bold mb-8 text-center">Category</h2>
-  <div className="card-grid">
-    <Link to="/cosmetics" className="card">
-      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1580326939256-bd950d90b81a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNvc21ldGljc3xlbnwwfDB8MHx8fDA%3D)" }}></div>
-      <div className="card__content">
-        <p className="card__category">Category</p>
-        <h3 className="card__heading">Cosmetics</h3>
-      </div>
-    </Link>
-    <Link to="/shoes" className="card">
-      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNob2VzfGVufDB8MHwwfHx8MA%3D%3D)" }}></div>
-      <div className="card__content">
-        <p className="card__category">Category</p>
-        <h3 className="card__heading">Shoes</h3>
-      </div>
-    </Link>
-    <Link to="/clothes" className="card">
-      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1561526116-e2460f4d40a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhzfGVufDB8MHwwfHx8MA%3D%3D)" }}></div>
-      <div className="card__content">
-        <p className="card__category">Category</p>
-        <h3 className="card__heading">Clothes</h3>
-      </div>
-    </Link>
-    <Link to="/women" className="card">
-      <div className="card__background" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1699570048416-464809789279?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJlc3MlMjBzZXdpbmd8ZW58MHwwfDB8fHww)" }}></div>
-      <div className="card__content">
-        <p className="card__category">Category</p>
-        <h3 className="card__heading">Women</h3>
-      </div>
-    </Link>
-  </div>
-</section>;
-
-      {/* <======newests products========> */}
-
+      </section>
+      ;{/* <======newests products========> */}
       <section className="new" data-aos="fade-up" data-aos-delay="400">
         <h2 className="text-3xl text-black font-bold mb-8 text-center">
           Newest Products
@@ -306,7 +270,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
       {/* <=========slider images========> */}
       <div className="background-slider">
         <Slider {...sliderSettings}>
@@ -321,105 +284,99 @@ const Home = () => {
           ))}
         </Slider>
       </div>
-
       {/* <=======offer========> */}
-      
-    <section className="py-8">
-  <div className="text-center p-10">
-    <h1 className="font-bold text-4xl mb-4 text-cyan-300">ON OFFER</h1>
-  </div>
+      <section className="py-8">
+        <div className="text-center p-10">
+          <h1 className="font-bold text-4xl mb-4 text-cyan-300">ON OFFER</h1>
+        </div>
 
-  
-    <section
-      id="Projects"
-      className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 "
-    >
-      {onOfferProducts.slice(0, 9).map((product) => (
-        <div
-          key={product.id}
-          className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+        <section
+          id="Projects"
+          className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 "
         >
-          <a href="#">
-            <img
-              src={`http://localhost:3001${product.image_url}`}
-              alt={product.name}
-              className="h-80 w-72 object-cover rounded-t-xl"
-              onError={(e) => {
-                console.error("Error loading image:", e);
-              }}
-            />
+          {onOfferProducts.slice(0, 9).map((product) => (
+            <div
+              key={product.id}
+              className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+            >
+              <a href="#">
+                <img
+                  src={`http://localhost:3001${product.image_url}`}
+                  alt={product.name}
+                  className="h-80 w-72 object-cover rounded-t-xl"
+                  onError={(e) => {
+                    console.error("Error loading image:", e);
+                  }}
+                />
 
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">
-                Brand: {product.brand}
-              </span>
-              <p className="text-lg font-bold text-black truncate block">
-                Size: {product.size}
-              </p>
-              <p className="text-base font-medium text-gray-500 capitalize">
-                Category: {product.category}
-              </p>
-              <p className="text-lg font-bold text-black truncate block capitalize">
-                Name: {product.name}
-              </p>
-              <p className="text-sm text-gray-600">
-                Description: {product.description}
-              </p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">
-                  Price: {product.price}
-                </p>
-                {product.previousPrice && (
-                  <del>
-                    <p className="text-sm text-gray-600 cursor-auto ml-2">
-                      Previous Price: {product.previousPrice}
+                <div className="px-4 py-3 w-72">
+                  <span className="text-gray-400 mr-3 uppercase text-xs">
+                    Brand: {product.brand}
+                  </span>
+                  <p className="text-lg font-bold text-black truncate block">
+                    Size: {product.size}
+                  </p>
+                  <p className="text-base font-medium text-gray-500 capitalize">
+                    Category: {product.category}
+                  </p>
+                  <p className="text-lg font-bold text-black truncate block capitalize">
+                    Name: {product.name}
+                  </p>
+                  {/* <p className="text-sm text-gray-600">
+                    Description: {product.description}
+                  </p> */}
+                  <div className="flex items-center">
+                    <p className="text-lg font-semibold text-black cursor-auto my-3">
+                      Price: {product.price}
                     </p>
-                  </del>
-                )}
-                <div className="ml-auto">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    className="bi bi-bag-plus"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
-                    />
-                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                  </svg>
-
-                  <button
-                    className="CartBtn mt-4"
-                    onClick={() => addToCart(product.id)}
-                  >
-                    <span className="IconContainer">
+                    {product.previousPrice && (
+                      <del>
+                        <p className="text-sm text-gray-600 cursor-auto ml-2">
+                          Previous Price: {product.previousPrice}
+                        </p>
+                      </del>
+                    )}
+                    <div className="ml-auto">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        height="1em"
-                        viewBox="0 0 576 512"
-                        fill="rgb(17, 17, 17)"
-                        className="cart"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        className="bi bi-bag-plus"
+                        viewBox="0 0 16 16"
                       >
-                        <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"></path>
+                        <path
+                          fillRule="evenodd"
+                          d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                        />
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                       </svg>
-                    </span>
-                    <span className="ml-2">Add to Cart</span>
-                  </button>
+
+                      <button
+                        className="CartBtn mt-4"
+                        onClick={() => addToCart(product.id)}
+                      >
+                        <span className="IconContainer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 576 512"
+                            fill="rgb(17, 17, 17)"
+                            className="cart"
+                          >
+                            <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"></path>
+                          </svg>
+                        </span>
+                        <span className="ml-2">Add to Cart</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
-        </div>
-      ))}
-    </section>
-
-</section>
-
-
+          ))}
+        </section>
+      </section>
       <section className="hero-section">
         <div className="maps" data-aos="fade-up" data-aos-delay="800">
           <iframe

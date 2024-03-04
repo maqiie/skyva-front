@@ -20,6 +20,7 @@ import Cosmetics from "./components/Products/Cosmetics";
 import Women from "./components/Products/Women";
 import Clothes from "./components/Products/Clothes";
 import Shoes from "./components/Products/Shoes";
+import About from "./components/About/About";
 
 
 function App() {
@@ -81,8 +82,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/map" element={<MapComponent />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          {/* <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} /> */}
-          {/* <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} /> */}
           <Route path="/cart/:id?" element={<Cart currentUser={currentUser} />} />
           <Route path="/checkout" element={<Checkout currentUser={currentUser}/>} />
           <Route path="/product" element={<Producst />} />
@@ -93,6 +92,7 @@ function App() {
           <Route path="/clothes" element={<Clothes />} />
           <Route path="women" element={<Women />} />
           <Route path="shoes" element={<Shoes />} />
+          <Route path="/about" element={<About/>}/>
 
 
         </Routes>
