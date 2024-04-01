@@ -3,15 +3,15 @@
 // import { PaystackButton } from "react-paystack";
 // import "./Checkout.css";
 
+
 // const CheckoutForm = () => {
 //   const [email, setEmail] = useState("");
 //   const [name, setName] = useState("");
 //   const [phone, setPhone] = useState("");
 
 //   const publicKey = "pk_test_918090c59443805569851c9d74c724671d86ee4f"; // Replace with your actual public key
-//   const amount = 100; // Amount in kobo (example: ₦10,000)
-//   const currency = "kes"; // Currency
-
+//   const amount = 1000; // Amount in KES (Kenyan Shilling)
+//   const currency = "KES"; // Currency
 
 //   const handlePaymentSuccess = () => {
 //     alert("Thanks for doing business with us! Come back soon!!");
@@ -24,6 +24,7 @@
 //   const componentProps = {
 //     email,
 //     amount,
+//     currency, // Add the currency field
 //     metadata: {
 //       name,
 //       phone,
@@ -78,18 +79,16 @@
 // };
 
 // export default CheckoutForm;
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PaystackButton } from "react-paystack";
 import "./Checkout.css";
 
-
-const CheckoutForm = () => {
+const CheckoutForm = ({ totalPrice }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
   const publicKey = "pk_test_918090c59443805569851c9d74c724671d86ee4f"; // Replace with your actual public key
-  const amount = 1000; // Amount in KES (Kenyan Shilling)
   const currency = "KES"; // Currency
 
   const handlePaymentSuccess = () => {
@@ -102,8 +101,8 @@ const CheckoutForm = () => {
 
   const componentProps = {
     email,
-    amount,
-    currency, // Add the currency field
+    amount: totalPrice * 100, // Convert totalPrice to smallest currency unit (e.g., cents)
+    currency,
     metadata: {
       name,
       phone,

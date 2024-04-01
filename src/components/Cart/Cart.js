@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import CheckoutForm from "./Checkout";
+
 
 class Cart extends Component {
   constructor(props) {
@@ -121,6 +123,8 @@ class Cart extends Component {
 
   render() {
     const { orderItems } = this.state;
+    const totalPrice = this.calculateTotal(); // Calculate total price
+
 
     return (
       <div className="container mx-auto px-4 py-8 border border-white">
@@ -202,6 +206,7 @@ class Cart extends Component {
             <span>Continue Shopping</span>
           </Link>
         </div>
+        <CheckoutForm totalPrice={totalPrice} />
 
         <ToastContainer />
       </div>
