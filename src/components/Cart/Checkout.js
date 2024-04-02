@@ -8,7 +8,7 @@ const CheckoutForm = ({ totalPrice }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  const publicKey = "pk_test_918090c59443805569851c9d74c724671d86ee4f"; // Replace with your actual public key
+  const publicKey = "pk_live_574f424cafe4f0b7c6df5f678520ad393e4d09fd"; // Replace with your actual public key
   const currency = "KES"; // Currency
 
   const handlePaymentSuccess = () => {
