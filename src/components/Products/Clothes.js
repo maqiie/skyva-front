@@ -13,7 +13,7 @@ const Shoes = () => {
  const addToCart = async (productId) => {
     console.log("Product ID:", productId); // Log the productId value
     try {
-      await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
+      await axios.post(`https://skyva-api.vercel.app/carts/${cartId}/add_to_cart`, {
         product_id: productId,
         quantity: 1,
       });
@@ -29,7 +29,7 @@ const Shoes = () => {
       try {
         const categoryId = 1; // Hardcoded category ID for shoes
         const response = await axios.get(
-          `http://localhost:3001/categories/${categoryId}/products`
+          `https://skyva-api.vercel.app/categories/${categoryId}/products`
         );
         console.log("Products fetched successfully:", response.data);
 
@@ -37,7 +37,7 @@ const Shoes = () => {
         const productsWithImages = response.data.map((product) => ({
           ...product,
           imageUrl: product.image_url
-            ? `http://localhost:3001${product.image_url}`
+            ? `https://skyva-api.vercel.app${product.image_url}`
             : null,
         }));
 

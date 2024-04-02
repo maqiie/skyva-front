@@ -33,7 +33,7 @@ const Navbar = () => {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/auth/validate_token"
+        "https://skyva-api.vercel.app/auth/validate_token"
       );
       const userData = response.data.data;
       const name = userData.name;
@@ -46,7 +46,7 @@ const Navbar = () => {
   const fetchCartItemCount = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/carts/item_count"
+        "https://skyva-api.vercel.app/carts/item_count"
       );
       const itemCount = response.data.itemCount;
       setCartItemCount(itemCount);

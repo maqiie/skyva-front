@@ -19,7 +19,7 @@ class Cart extends Component {
   componentDidMount() {
     if (this.props.currentUser) {
       const userId = this.props.currentUser.id;
-      const backendEndpoint = `http://localhost:3001/carts/${userId}/get_cart`;
+      const backendEndpoint = `http:https://skyva-api.vercel.app//carts/${userId}/get_cart`;
 
       axios
         .get(backendEndpoint)
@@ -50,7 +50,7 @@ class Cart extends Component {
   removeItemFromCart = (orderItemId) => {
     axios
       .delete(
-        `http://localhost:3001/carts/${this.props.currentUser.id}/remove_item/${orderItemId}`
+        `https://skyva-api.vercel.app/carts/${this.props.currentUser.id}/remove_item/${orderItemId}`
       )
       .then((response) => {
         this.setState((prevState) => ({
@@ -73,7 +73,7 @@ class Cart extends Component {
   clearCart = () => {
     axios
       .delete(
-        `http://localhost:3001/carts/${this.props.currentUser.id}/clear_cart`
+        `https://skyva-api.vercel.app/carts/${this.props.currentUser.id}/clear_cart`
       )
       .then(() => {
         this.setState({ orderItems: [] });
@@ -97,7 +97,7 @@ class Cart extends Component {
 
     axios
       .patch(
-        `http://localhost:3001/carts/${userId}/add_quantity/${orderItemId}`,
+        `https://skyva-api.vercel.app/carts/${userId}/add_quantity/${orderItemId}`,
         {
           quantity: quantityChange,
         }
