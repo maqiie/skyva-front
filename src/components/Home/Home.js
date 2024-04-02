@@ -246,7 +246,7 @@ const Home = () => {
                 <p className="text-lg font-semibold text-black">
                   {product.price} TZS
                 </p>
-                {/* <p className="text-lg font-semibold text-black"{product.description}></p> */}
+      
               </div>
 
               <button

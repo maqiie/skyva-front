@@ -183,9 +183,9 @@ class Cart extends Component {
               ${this.calculateTotal().toFixed(2)}
             </span>
           </div>
-          <Link to="/checkout" className="bg-blue-500 text-white px-4 py-2 rounded">
+          {/* <Link to="/checkout" className="bg-blue-500 text-white px-4 py-2 rounded">
             Checkout
-          </Link>
+          </Link> */}
         </div>
         <div className="mt-8">
           <Link to="/" className="text-blue-500 flex items-center transition duration-300 hover:text-blue-700 hover:underline">
