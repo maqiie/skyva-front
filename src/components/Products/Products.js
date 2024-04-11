@@ -18,7 +18,7 @@ class Products extends Component {
   componentDidMount() {
     // Fetch products when the component mounts
     axios
-      .get("https://skyva-api.vercel.app/products")
+      .get("https://skyva-api-1.onrender.com/products")
       .then((response) => {
         this.setState({
           products: response.data,
@@ -64,7 +64,7 @@ class Products extends Component {
                     <div className="h-44 overflow-hidden relative">
                       <a href="#">
                         <img
-                          src={`https://skyva-api.vercel.app${product.image_url}`}
+                          src={`https://skyva-api-1.onrender.com${product.image_url}`}
                           alt={product.name}
                           className="h-full w-full object-cover rounded-t-xl"
                           onError={(e) => {

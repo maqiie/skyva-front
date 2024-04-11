@@ -34,7 +34,7 @@ function App() {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        "https://skyva-api.vercel.app/${userId}/get_cart"
+        "https://skyva-api-1.onrender.com/${userId}/get_cart"
       );
       setCartItems(response.data);
     } catch (error) {
@@ -54,7 +54,7 @@ function App() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          "https://skyva-api.vercel.app/auth/validate_token"
+          "https://skyva-api-1.onrender.com/auth/validate_token"
         );
         const userData = response.data.data;
         setCurrentUser(userData);
