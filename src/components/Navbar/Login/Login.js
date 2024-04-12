@@ -136,6 +136,8 @@ const Login = () => {
         },
       });
   
+      console.log("Registration response:", response); // Log the response
+  
       if (response.status === 200) {
         toast.success("User created successfully! Please login"); // Display the toast message
         handleLoginSuccess();
@@ -149,6 +151,7 @@ const Login = () => {
       setFormData({ ...formData, loading: false });
     }
   };
+  
   
 
   return (
