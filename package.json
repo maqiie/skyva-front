@@ -13,6 +13,7 @@
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
+    "emailjs-com": "^3.2.0",
     "paystack": "^2.0.1",
     "postcss": "^8.4.33",
     "react": "^18.2.0",
