@@ -97,10 +97,36 @@ const Login = () => {
     }
   };
 
+  // const registerRequest = async () => {
+  //   try {
+  //     setFormData({ ...formData, loading: true });
+
+  //     const response = await axios.post("https://skyva-api-1.onrender.com/auth", {
+  //       user: {
+  //         name,
+  //         email: usernameOrEmail,
+  //         password,
+  //         password_confirmation: confirmPassword,
+  //       },
+  //     });
+
+  //     if (response.status === 200) {
+  //       toast.success("User created successfully!");
+  //       handleLoginSuccess();
+  //     } else {
+  //       throw new Error("Invalid response from server");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error with registration request:", error);
+  //     // Handle error and display toast messages
+  //   } finally {
+  //     setFormData({ ...formData, loading: false });
+  //   }
+  // };
   const registerRequest = async () => {
     try {
       setFormData({ ...formData, loading: true });
-
+  
       const response = await axios.post("https://skyva-api-1.onrender.com/auth", {
         user: {
           name,
@@ -109,9 +135,9 @@ const Login = () => {
           password_confirmation: confirmPassword,
         },
       });
-
+  
       if (response.status === 200) {
-        toast.success("User created successfully!");
+        toast.success("User created successfully! Please login"); // Display the toast message
         handleLoginSuccess();
       } else {
         throw new Error("Invalid response from server");
@@ -123,6 +149,7 @@ const Login = () => {
       setFormData({ ...formData, loading: false });
     }
   };
+  
 
   return (
     <div className="container1">
