@@ -19,7 +19,7 @@ class Cart extends Component {
   componentDidMount() {
     if (this.props.currentUser) {
       const userId = this.props.currentUser.id;
-      const backendEndpoint = `http:https://skyva-api-1.onrender.com/carts/${userId}/get_cart`;
+      const backendEndpoint = `https://skyva-api-1.onrender.com/carts/${userId}/get_cart`;
 
       axios
         .get(backendEndpoint)
