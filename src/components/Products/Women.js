@@ -13,7 +13,7 @@ const Shoes = () => {
  const addToCart = async (productId) => {
     console.log("Product ID:", productId); // Log the productId value
     try {
-      await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
+      await axios.post(`https://skyva-api-1.onrender.com/carts/${cartId}/add_to_cart`, {
         product_id: productId,
         quantity: 5,
       });
@@ -29,7 +29,7 @@ const Shoes = () => {
       try {
         const categoryId = 1; // Hardcoded category ID for shoes
         const response = await axios.get(
-          `http://localhost:3001/categories/${categoryId}/products`
+          `https://skyva-api-1.onrender.com/categories/${categoryId}/products`
         );
         console.log("Products fetched successfully:", response.data);
 
@@ -37,7 +37,7 @@ const Shoes = () => {
         const productsWithImages = response.data.map((product) => ({
           ...product,
           imageUrl: product.image_url
-            ? `http://localhost:3001${product.image_url}`
+            ? `https://skyva-api-1.onrender.com${product.image_url}`
             : null,
         }));
 
@@ -57,7 +57,7 @@ const Shoes = () => {
   return (
     <div className="container mx-auto px-4">
       <h2 className="text-4xl font-bold mb-8 text-center text-blue-900 mt-2">
-        Clothes
+        Women
       </h2>
 
       {/* <h2 className="text-2xl font-bold text-cyan-900 mb-4 text-center">Products in Category Shoes</h2> */}

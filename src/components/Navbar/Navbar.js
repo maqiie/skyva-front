@@ -33,7 +33,7 @@ const Navbar = () => {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/auth/validate_token"
+        "https://skyva-api-1.onrender.com/auth/validate_token"
       );
       const userData = response.data.data;
       const name = userData.name;
@@ -46,7 +46,7 @@ const Navbar = () => {
   const fetchCartItemCount = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/carts/item_count"
+        "https://skyva-api-1.onrender.com/carts/item_count"
       );
       const itemCount = response.data.itemCount;
       setCartItemCount(itemCount);
@@ -121,16 +121,7 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faUser} className="text-xl" />
                   </Link>
                 ) : (
-                  // <div className="flex items-center">
-                  //   <span className="text-gray-300">Welcome, {userName}</span>
-                  //   <button
-                  //     onClick={handleLogout}
-                  //     className="ml-4 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded-md text-sm font-medium flex items-center"
-                  //   >
-                  //     <FontAwesomeIcon icon={faSignOutAlt} className="mr-1" />
-                  //     Logout
-                  //   </button>
-                  // </div>
+                  
                   <div className="flex items-center">
                     <span className="text-gray-300 mr-4">Welcome,</span>
                     <span className="text-cyan-300 text-lg">{userName}</span>
@@ -156,45 +147,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* {showMenu && (
-        <div className="sm:hidden bg-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              to="/about"
-              className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-            >
-              About
-            </Link>
-            <Link
-              to="/product"
-              className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-            >
-              Services
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-            >
-              Contact
-            </Link>
-            {!isLoggedIn ? (
-              <Link
-                to="/login"
-                className="block w-full text-left text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-              >
-                Login
-              </Link>
-            ) : (
-              <button
-                onClick={handleLogout}
-                className="block w-full text-left text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
-              >
-                Logout
-              </button>
-            )}
-          </div>
-        </div>
-      )} */}
+     
       {showMenu && (
   <div className="sm:hidden bg-gray-900">
     <div className="px-4 py-3">

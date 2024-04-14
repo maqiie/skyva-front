@@ -33,7 +33,7 @@ const Home = () => {
   }, [isLoggedIn]);
 
   const fetchUserData = () => {
-    fetch(`http://localhost:3001/auth/registrations/show?id=1`)
+    fetch(`https://skyva-api-1.onrender.com/auth/registrations/show?id=1`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -58,7 +58,7 @@ const Home = () => {
   const fetchRecentProducts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/products/recently_added?limit=8"
+        "https://skyva-api-1.onrender.com/products/recently_added?limit=8"
       );
       // console.log("Fetched recent products:", response.data);
       setRecentProducts(response.data);
@@ -71,7 +71,7 @@ const Home = () => {
   const fetchOnOfferProducts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/products/on_offer"
+        "https://skyva-api-1.onrender.com/products/on_offer"
       );
       // Log the fetched product data
       console.log("Fetched on offer products:");
@@ -93,7 +93,7 @@ const Home = () => {
   const addToCart = async (productId) => {
     console.log("Product ID:", productId); // Log the productId value
     try {
-      await axios.post(`http://localhost:3001/carts/${cartId}/add_to_cart`, {
+      await axios.post(`https://skyva-api-1.onrender.com/carts/${cartId}/add_to_cart`, {
         product_id: productId,
         quantity: 1,
       });
@@ -231,7 +231,7 @@ const Home = () => {
               <div className="w-full h-60 overflow-hidden mb-4 rounded-md">
                 {product.image_url && (
                   <img
-                    src={`http://localhost:3001${product.image_url}`}
+                    src={`https://skyva-api-1.onrender.com${product.image_url}`}
                     alt={product.name}
                     className="w-full h-full object-cover rounded-md"
                     style={{ aspectRatio: "16/10" }} // Adjust the aspect ratio as needed
@@ -246,7 +246,7 @@ const Home = () => {
                 <p className="text-lg font-semibold text-black">
                   {product.price} TZS
                 </p>
-                {/* <p className="text-lg font-semibold text-black"{product.description}></p> */}
+      
               </div>
 
               <button
@@ -301,7 +301,7 @@ const Home = () => {
             >
               <a href="#">
                 <img
-                  src={`http://localhost:3001${product.image_url}`}
+                  src={`https://skyva-api-1.onrender.com${product.image_url}`}
                   alt={product.name}
                   className="h-80 w-72 object-cover rounded-t-xl"
                   onError={(e) => {

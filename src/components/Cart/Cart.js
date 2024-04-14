@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import CheckoutForm from "./Checkout";
+
 
 class Cart extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Cart extends Component {
   componentDidMount() {
     if (this.props.currentUser) {
       const userId = this.props.currentUser.id;
-      const backendEndpoint = `http://localhost:3001/carts/${userId}/get_cart`;
+      const backendEndpoint = `https://skyva-api-1.onrender.com/carts/${userId}/get_cart`;
 
       axios
         .get(backendEndpoint)
@@ -48,7 +50,7 @@ class Cart extends Component {
   removeItemFromCart = (orderItemId) => {
     axios
       .delete(
-        `http://localhost:3001/carts/${this.props.currentUser.id}/remove_item/${orderItemId}`
+        `https://skyva-api-1.onrender.com/carts/${this.props.currentUser.id}/remove_item/${orderItemId}`
       )
       .then((response) => {
         this.setState((prevState) => ({
@@ -71,7 +73,7 @@ class Cart extends Component {
   clearCart = () => {
     axios
       .delete(
-        `http://localhost:3001/carts/${this.props.currentUser.id}/clear_cart`
+        `https://skyva-api-1.onrender.com/carts/${this.props.currentUser.id}/clear_cart`
       )
       .then(() => {
         this.setState({ orderItems: [] });
@@ -95,7 +97,7 @@ class Cart extends Component {
 
     axios
       .patch(
-        `http://localhost:3001/carts/${userId}/add_quantity/${orderItemId}`,
+        `https://skyva-api-1.onrender.com/carts/${userId}/add_quantity/${orderItemId}`,
         {
           quantity: quantityChange,
         }
@@ -121,6 +123,8 @@ class Cart extends Component {
 
   render() {
     const { orderItems } = this.state;
+    const totalPrice = this.calculateTotal(); // Calculate total price
+
 
     return (
       <div className="container mx-auto px-4 py-8 border border-white">
@@ -179,9 +183,9 @@ class Cart extends Component {
               ${this.calculateTotal().toFixed(2)}
             </span>
           </div>
-          <Link to="/checkout" className="bg-blue-500 text-white px-4 py-2 rounded">
+          {/* <Link to="/checkout" className="bg-blue-500 text-white px-4 py-2 rounded">
             Checkout
-          </Link>
+          </Link> */}
         </div>
         <div className="mt-8">
           <Link to="/" className="text-blue-500 flex items-center transition duration-300 hover:text-blue-700 hover:underline">
@@ -202,6 +206,7 @@ class Cart extends Component {
             <span>Continue Shopping</span>
           </Link>
         </div>
+        <CheckoutForm totalPrice={totalPrice} />
 
         <ToastContainer />
       </div>
