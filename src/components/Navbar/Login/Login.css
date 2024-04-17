@@ -1,4 +1,4 @@
-.singup {
+/* .singup {
   color: #000;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -148,7 +148,7 @@
   }
 }
 
-/* Small screen adjustments */
+
 @media (max-width: 768px) {
   .card2 {
     min-height: 250px;
@@ -180,21 +180,21 @@
     font-size: 12px;
   }
 }
-/* swithe ========text */
+
  
 .login-text {
   color: blue;
   text-align: center;
   
-   /* Change this to the desired color for "Login" */
+
 }
 
 .signup-text {
-  color: green; /* Change this to the desired color for "Sign Up" */
+  color: green;
 }
 
 
-/* Extra small screen adjustments */
+
 @media (max-width: 480px) {
   .card2 {
     min-height: 200px;
@@ -218,7 +218,6 @@
   }
 }
 
-/* Very small screen adjustments */
 @media (max-width: 320px) {
   .card2 {
     min-height: 180px;
@@ -243,4 +242,109 @@
 
 
 
+ */
+ .container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
 
+.card2 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 80%; /* Set width to 80% on large screens */
+  max-width: 400px; /* Add max-width for responsiveness */
+  transition: box-shadow 0.3s ease;
+}
+
+.card2:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.switch {
+  color: #555;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.switch:hover {
+  color: #333;
+}
+
+.inputBox,
+.inputBox1 {
+  margin-bottom: 20px; /* Add space between input boxes */
+  position: relative;
+  width: 100%; /* Set width to 100% to fill the container */
+}
+
+.inputBox input,
+.inputBox1 input {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  color: #000;
+}
+
+.inputBox input:focus,
+.inputBox1 input:focus {
+  border-color: #555;
+}
+
+.inputBox span,
+.inputBox1 span {
+  color: #888;
+  font-size: 14px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.inputBox input:focus ~ span,
+.inputBox input:valid ~ span,
+.inputBox1 input:focus ~ span,
+.inputBox1 input:valid ~ span {
+  color: #555;
+  transform: translateY(-120%) scale(0.8);
+}
+
+.enter {
+  background-color: #555;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+
+.enter:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .card2 {
+    width: 100%; /* Adjust width to 100% on small screens */
+    max-width: none; /* Remove max-width on small screens */
+  }
+}

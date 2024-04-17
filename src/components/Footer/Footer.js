@@ -4,30 +4,27 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
-      <div class="footer">
+      <div className="footer">
         <div id="button"></div>
         <div id="container">
           <div id="cont">
-            <div class="footer_center">
+            <div className="footer_center">
               <h3></h3>
               <nav>
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="#">About Us</a>
+                    <a href="/about">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Services</a>
+                    <a href="/services">Services</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="/contact">Contact</a>
                   </li>
-                  <li></li>
-                  <section className="social">
-                    
-                  </section>
+                  {/* Add additional <li> tags for more links */}
                 </ul>
               </nav>
             </div>
@@ -39,3 +36,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
