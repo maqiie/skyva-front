@@ -1,4 +1,6 @@
 .input-field {
+  color: #000; /* Set text color to black */
+
     border: 1px solid #ced4da; /* Add a solid border */
     border-radius: 0.25rem; /* Add border-radius for rounded corners */
     padding: 0.5rem; /* Add padding for spacing */
