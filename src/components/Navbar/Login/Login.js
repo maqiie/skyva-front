@@ -283,7 +283,7 @@ const Login = () => {
     try {
       setFormData({ ...formData, loading: true });
 
-      const response = await axios.post("http://localhost:3001/auth/sign_in", {
+      const response = await axios.post("https://skyva-api-1.onrender.com/auth/sign_in", {
         email: usernameOrEmail,
         password,
       });
@@ -324,7 +324,7 @@ const Login = () => {
     try {
       setFormData({ ...formData, loading: true });
 
-      const response = await axios.post("http://localhost:3001/auth", {
+      const response = await axios.post("https://skyva-api-1.onrender.com/auth", {
         user: {
           name,
           email: usernameOrEmail,
