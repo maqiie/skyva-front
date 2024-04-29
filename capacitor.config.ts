@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.example.app',
-  appName: 'skyva-front',
+  appId: 'skyva.com',
+  appName: 'skva-front',
   webDir: 'build'
 };
 
